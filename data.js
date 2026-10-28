@@ -1,11 +1,9 @@
 /* ========================================================
-   KHO DỮ LIỆU BÀI HỌC THỦY MẪU (水母)
-   HỆ THỐNG HỌC TẬP HSK & BÀI HỌC TOÀN DIỆN
+   KHO DỮ LIỆU BÀI HỌC THỦY MẪU (水母 • SHUIMU)
    ======================================================== */
 
 // 1. KHO TỪ VỰNG GIẢN THỂ (HSK 1 - 6)
 const scVocabData = [
-  // --- BÀI 15: HSK 4 (HẠ) ---
   {
     hanzi: "弹钢琴",
     pinyin: "tán gāngqín",
@@ -172,7 +170,7 @@ const scVocabData = [
     type: "Phó từ",
     level: "HSK 4 (Hạ)",
     lesson: 15,
-    meaning: "Nhất thiết, tuyệt đối (thường dùng khuyên ngăn)",
+    meaning: "Nhất thiết, tuyệt đối (dùng khuyên can)",
     example: "表扬千万不要太多，过多的表扬可能会给孩子带来压力。",
     exampleVn: "Khen ngợi tuyệt đối đừng quá nhiều, khen ngợi quá mức có thể mang lại áp lực cho trẻ."
   },
@@ -292,7 +290,7 @@ const scVocabData = [
     type: "Tính từ",
     level: "HSK 4 (Hạ)",
     lesson: 15,
-    meaning: "Bất cẩn, cẩu thả, không cẩn thận",
+    meaning: "Bất cẩn, cẩu thả",
     example: "做数学题一定要认真，千万不要粗心。",
     exampleVn: "Làm bài tập toán nhất định phải tập trung, tuyệt đối đừng bất cẩn."
   },
@@ -318,7 +316,176 @@ const scVocabData = [
   }
 ];
 
-// 2. KHO TỪ VỰNG PHỒN THỂ (10 CHỦ ĐỀ)
+// 2. KHO NGỮ PHÁP GIẢN THỂ
+const scGrammarData = [
+  {
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    title: "1. Động từ / Bổ ngữ: 想起来 (Nhớ ra, gợi lại ký ức)",
+    explain: "“起来” làm bổ ngữ xu hướng sau động từ chỉ hướng từ dưới lên trên. Khi kết hợp với “想” tạo thành “想起来”, biểu thị việc tìm lại một ký ức hay sự việc trong quá khứ.",
+    example: "我想起来了，这孩子又聪明又可爱，你们教育得真好！",
+    exampleVn: "Tôi nhớ ra rồi, đứa trẻ này vừa thông minh vừa đáng yêu, các bạn dạy dỗ thật khéo quá!"
+  },
+  {
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    title: "2. Động từ khẩu ngữ: 弄 (Làm, giải quyết, làm cho)",
+    explain: "Động từ “弄” thường dùng trong khẩu ngữ để thay thế cho các động từ cụ thể như: chuẩn bị (弄好材料), làm vỡ/chạm hỏng (别弄坏了), làm cho tâm trạng thay đổi (弄得我俩心情都不好).",
+    example: "每天因为这些小事批评她，弄得我俩心情都不好。",
+    exampleVn: "Ngày nào cũng vì mấy chuyện vặt vãnh này mà mắng nó, làm cho cả hai mẹ con đều bực mình."
+  },
+  {
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    title: "3. Phó từ: 千万 (Nhất thiết, tuyệt đối) & Phân biệt với 一定",
+    explain: "“千万” biểu thị lời dặn dò tha thiết, phía sau THƯỜNG đi với dạng PHỦ ĐỊNH (千万别 / 千万不要 / 千万不能). Trong khi “一定” dùng nhiều trong câu khẳng định và mang ngữ khí mệnh lệnh mạnh mẽ hơn.",
+    example: "表扬千万不要太多，过多的表扬可能会给孩子带来压力。",
+    exampleVn: "Khen ngợi tuyệt đối đừng quá mức, khen ngợi quá nhiều có thể gây áp lực cho trẻ."
+  },
+  {
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    title: "4. Động từ: 来 (Đặt trước một động từ khác để chỉ ý 'sắp làm việc gì')",
+    explain: "Được dùng trong khẩu ngữ, đứng trước một động từ chính để biểu đạt chủ thể chuẩn bị hoặc chủ động bắt tay vào làm việc gì.",
+    example: "这个沙发这么大，你们两个肯定抬不动，我来帮你们一起抬。",
+    exampleVn: "Cái ghế sofa này to thế này, hai người chắc chắn khiêng không nổi, để tôi đến giúp các bạn khiêng nhé."
+  },
+  {
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    title: "5. Từ chỉ lượng xấp xỉ: 左右 (Khoảng, chừng)",
+    explain: "“左右” luôn đứng NGAY SAU số lượng từ để biểu thị con số xấp xỉ, xê xích ít nhiều quanh mốc đó.",
+    example: "七岁左右的儿童普遍好动，坐不住。",
+    exampleVn: "Trẻ nhỏ tầm khoảng 7 tuổi nhìn chung đều rất hiếu động, ngồi không yên."
+  }
+];
+
+// 3. KHO BÀI ĐỌC & HỘI THOẠI GIẢN THỂ
+const scReadingData = [
+  {
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    title: "HSK 4 (Hạ) - Bài 15: 教育孩子的艺术 (Nghệ thuật dạy dỗ con trẻ)",
+    chineseText: `【课文一】
+王静：那个一边弹钢琴一边唱歌的男孩子是谁？表演得真棒！
+李老师：是我孙子。去年寒假前的新年会他也表演过一次。
+王静：我想起来了，这孩子又聪明又可爱，你们教育得真好！
+李老师：是他父母教育得好。父母是孩子最重要的老师。他父母不仅教他知识，而且花了很长时间帮助他养成了非常好的习惯，现在他每天都自己练习弹钢琴。
+王静：让孩子养成一个好习惯实在太重要了，看来我得向他父母好好儿学习。
+李老师：对。如果希望有一个优秀的孩子，你就要先成为一位优秀的父亲或者母亲。
+
+【课文二】
+王静：看你脸色不太好，是不是昨晚没休息好？
+孙月：别提了。我女儿昨晚做作业又做到11点。
+王静：睡觉太晚对孩子的身体没有好处。最近孩子作业是不是太多了？
+孙月：主要是她做事情比较慢，比如早上闹钟响了她不醒，我赶时间送她上学，她又急着上厕所。每天因为这些小事批评她，弄得我俩心情都不好。
+王静：孩子做事慢，往往是因为他们不会安排自己的时间。你应该让孩子学会管理时间。
+孙月：看来还是我的教育方法有问题。平时看她做事慢，总想替她做，以后得让她学会安排时间，自己的事情自己做。
+
+【课文三】
+王静：明天又要带我儿子去医院打针，想想我就头疼。他就怕打针，每次打针都哭得特别厉害。
+孙月：记得我女儿小时候，带她去医院打针，刚开始，她害怕得想要哭。我就小声地和护士说我女儿很勇敢，一点儿也不怕打针，女儿听了以后马上就不哭了。
+王静：原来鼓励和表扬对小孩儿挺有用的，下次我也试试。
+孙月：不过表扬也是一门艺术，表扬千万不要太多，过多的表扬可能会给孩子带来压力。不仅起不到鼓励的作用，还可能让孩子怀疑自己的能力，变得没有信心。
+王静：那怎么表扬孩子才会更有效果呢？
+孙月：我认为表扬要及时，而且表扬不仅仅要看结果，更要看过程，这样才能鼓励他的积极性，让他变得勇敢，不怕困难。
+
+【课文四】
+有的孩子在得不到自己想要的东西的时候，会通过哭、扔东西或者故意敲打来引起父母的注意。在这种情况下，建议父母先不要生气，应该停下手里的事情，陪孩子整理整理东西，和他们聊聊天儿，弄清楚他们的问题。父母的关心，可以让孩子心情愉快起来。教育孩子应该选择合适的方法，最好不要为了解决问题而骗孩子，这是因为儿童缺少判断能力，看到父母骗人，他们也会学着说假话。
+
+【课文五】
+七岁左右的儿童普遍好动，坐不住，所以老师在教这个年龄段的孩子时，一定要想办法引起他们的兴趣。只有让他们觉得你教的内容有趣，他们才会愿意努力学习。当孩子不明白时，应该多鼓励他，不要用“懒”、“笨”、“粗心”这种词批评他，这样对他们的正常发展不好。而且，对不同性格的孩子要使用不同的教育方法。如果孩子比较骄傲，应该让他明白还有很多知识需要学习；要是孩子性格有些害羞，就要经常鼓励他说出自己的看法，这样才能让每一个孩子都健康地发展。`,
+    vietnameseText: `【Bài khóa 1】
+Vương Tĩnh: Cậu bé vừa đánh đàn piano vừa hát kia là ai vậy? Biểu diễn cừ thật đấy!
+Thầy Lý: Là cháu trai tôi. Trước kỳ nghỉ đông năm ngoái buổi liên hoan mừng năm mới nó cũng biểu diễn một lần.
+Vương Tĩnh: Em nhớ ra rồi, đứa bé này vừa thông minh vừa đáng yêu, thầy cô nuôi dạy khéo quá!
+Thầy Lý: Là do bố mẹ nó dạy dỗ tốt đấy. Cha mẹ chính là người thầy quan trọng nhất của con trẻ. Bố mẹ nó không chỉ dạy kiến thức, mà còn dành rất nhiều thời gian giúp nó rèn luyện những thói quen rất tốt, bây giờ ngày nào nó cũng tự giác luyện đàn.
+Vương Tĩnh: Rèn cho con thói quen tốt quả thật quá quan trọng, xem ra em phải học hỏi bố mẹ cậu bé nhiều rồi.
+Thầy Lý: Đúng vậy. Muốn có một đứa con ưu tú thì trước hết bạn phải trở thành một người cha hoặc người mẹ ưu tú đã.
+
+【Bài khóa 2】
+Vương Tĩnh: Sắc mặt chị trông không được tốt, có phải tối qua không ngủ ngon giấc không?
+Tôn Nguyệt: Đừng nhắc nữa. Tối qua con gái chị lại làm bài tập đến tận 11 giờ.
+Vương Tĩnh: Ngủ muộn quá không tốt cho sức khỏe của trẻ. Dạo này bài tập về nhà của cháu nhiều lắm à chị?
+Tôn Nguyệt: Chủ yếu là do nó làm việc lề mề quá, ví dụ sáng chuông báo thức reo mà nó không chịu dậy, chị vội đưa đi học thì nó lại cuống cuồng đi vệ sinh. Ngày nào cũng vì mấy chuyện này mà mắng con, làm tâm trạng cả hai mẹ con đều bực bội.
+Vương Tĩnh: Trẻ con làm việc chậm thường là do chúng chưa biết cách sắp xếp thời gian. Chị nên để cháu học cách tự quản lý thời gian.
+Tôn Nguyệt: Xem ra phương pháp giáo dục của chị vẫn có vấn đề. Ngày thường thấy con lề mề là chị lại muốn làm hộ, sau này phải để con tự biết sắp đặt thời gian, việc của mình tự mình làm.
+
+【Bài khóa 3】
+Vương Tĩnh: Ngày mai em lại phải dắt con trai đi bệnh viện tiêm phòng, nghĩ đến thôi là đã đau đầu. Thằng bé sợ tiêm lắm, lần nào tiêm cũng khóc toáng lên.
+Tôn Nguyệt: Chị nhớ hồi con gái chị còn nhỏ, đưa đi viện tiêm, lúc đầu nó cũng sợ sắp khóc. Thế là chị nói nhỏ với cô y tá rằng con gái chị dũng cảm lắm, không sợ tiêm chút nào, con bé nghe xong lập tức nín khóc ngay.
+Vương Tĩnh: Hóa ra khích lệ và khen ngợi có tác dụng tốt với trẻ nhỏ như thế, lần sau em cũng thử xem sao.
+Tôn Nguyệt: Nhưng khen ngợi cũng là một nghệ thuật, tuyệt đối đừng khen quá đà, khen nhiều quá có thể gây áp lực cho trẻ, vừa không đạt được hiệu quả khích lệ, vừa khiến trẻ nghi ngờ năng lực của mình, dần mất tự tin.
+Vương Tĩnh: Vậy khen thế nào mới đem lại hiệu quả tốt nhất ạ?
+Tôn Nguyệt: Chị nghĩ khen ngợi phải đúng lúc, và không chỉ nhìn vào kết quả mà cần khen cả quá trình nỗ lực, như vậy mới kích thích được sự tích cực của con, giúp con trở nên dũng cảm, không sợ khó khăn.
+
+【Bài khóa 4】
+Có những đứa trẻ khi không có được thứ mình muốn sẽ khóc lóc, ném đồ hoặc cố tình đập phá để gây sự chú ý của cha mẹ. Trong tình huống này, cha mẹ đừng nên vội nổi nóng, hãy tạm gác việc đang làm, cùng con dọn dẹp đồ đạc, trò chuyện tâm tình để tìm hiểu rõ vấn đề của con. Sự quan tâm của cha mẹ sẽ làm cho tâm trạng của trẻ vui vẻ trở lại. Dạy con nên chọn phương pháp phù hợp, tốt nhất đừng vì giải quyết vấn đề trước mắt mà lừa dối trẻ, bởi trẻ nhỏ thiếu khả năng phán đoán, thấy bố mẹ nói dối thì con cũng sẽ học theo nói lời giả tạo.
+
+【Bài khóa 5】
+Trẻ em tầm khoảng 7 tuổi đa phần rất hiếu động, ngồi không yên một chỗ. Vì thế khi giáo viên giảng dạy cho độ tuổi này nhất định phải tìm cách khơi gợi hứng thú của các em. Chỉ khi cảm thấy nội dung hấp dẫn, các em mới chịu nỗ lực học tập. Khi trẻ chưa hiểu bài, hãy động viên khích lệ nhiều hơn, chớ dùng những từ ngữ như "lười biếng", "ngốc nghếch", "bất cẩn" để chỉ trích con, điều đó rất có hại cho sự phát triển bình thường. Hơn nữa, với mỗi tính cách khác nhau cần áp dụng phương pháp khác nhau: Trẻ có tính kiêu ngạo thì nên chỉ ra cho con hiểu còn nhiều tri thức cần học hỏi; trẻ có tính rụt rè nhút nhát thì phải thường xuyên khích lệ con tự tin nói ra quan điểm của chính mình, như thế mới giúp từng đứa trẻ đều phát triển lành mạnh.`
+  }
+];
+
+// 4. KHO BÀI TẬP TRẮC NGHIỆM ĐỒNG BỘ
+const quizData = [
+  {
+    section: "sc",
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    tag: "HSK 4 (Hạ) • Bài 15 • Ngữ pháp 千万",
+    question: "选词填空：表扬孩子______不要太多，过多的表扬可能会带来压力。",
+    audio: "",
+    options: ["A. 千方", "B. 千万", "C. 一定", "D. 肯定"],
+    correctIndex: 1,
+    explain: "Chính xác! Phó từ '千万' kết hợp dạng phủ định '千万不要' để thể hiện lời khuyên răn thiết tha."
+  },
+  {
+    section: "sc",
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    tag: "HSK 4 (Hạ) • Bài 15 • Lượng từ 左右",
+    question: "选词填空：七岁______的儿童普遍好动，坐不住。",
+    audio: "",
+    options: ["A. 左右", "B. 上下", "C. 大概", "D. 也许"],
+    correctIndex: 0,
+    explain: "Chính xác! '左右' đứng ngay sau từ chỉ số lượng '七岁' biểu thị độ tuổi xấp xỉ khoảng 7 tuổi."
+  },
+  {
+    section: "sc",
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    tag: "HSK 4 (Hạ) • Bài 15 • Đọc hiểu 课文",
+    question: "根据课文内容判断：当孩子性格有些害羞时，家长和老师应该怎么做？",
+    audio: "",
+    options: ["A. 用“笨”、“粗心”批评他", "B. 经常替他做决定", "C. 经常鼓励他说出自己的看法", "D. 不让他跟别的小朋友玩"],
+    correctIndex: 2,
+    explain: "Chính xác! Bài khóa 5 nêu rõ: 要是孩子性格有些害羞，就要经常鼓励他说出自己的看法."
+  },
+  {
+    section: "sc",
+    level: "HSK 4 (Hạ)",
+    lesson: 15,
+    tag: "HSK 4 (Hạ) • Bài 15 • Từ vựng 同字词 (护)",
+    question: "选词填空：因为要申请去国外留学，她最近特别忙，一方面要准备成绩证明，办______，一方面还要跟国外的大学联系。",
+    audio: "",
+    options: ["A. 护照", "B. 保护", "C. 护士", "D. 照顾"],
+    correctIndex: 0,
+    explain: "Chính xác! Đi du học nước ngoài thì phải làm hộ chiếu (办护照)."
+  },
+  {
+    section: "tc",
+    topic: 1,
+    tag: "Phồn Thể • Chủ đề 1: Giao Tiếp",
+    question: "選出最合適的回答 (Chọn câu trả lời phù hợp nhất): 「祝你生日快樂，事事順心！」",
+    audio: "",
+    options: ["A. 不客氣，再見！", "B. 謝謝你的祝福！", "C. 沒關係，我不要。", "D. 請問在哪裡？"],
+    correctIndex: 1,
+    explain: "Chính xác! Khi được người khác chúc mừng sinh nhật thì đáp lại bằng '謝謝你的祝福！'"
+  }
+];
+
+// 5. KHO TỪ VỰNG PHỒN THỂ (10 CHỦ ĐỀ)
 const tcVocabData = [
   {
     hanzi: "認識",
@@ -331,42 +498,23 @@ const tcVocabData = [
   }
 ];
 
-// 3. KHO BÀI TẬP TRẮC NGHIỆM ĐA NĂNG & CÓ AUDIO
-const quizData = [
+// 6. KHO NGỮ PHÁP PHỒN THỂ (10 CHỦ ĐỀ)
+const tcGrammarData = [
   {
-    section: "sc",
-    tag: "HSK 4 (Hạ) • Bài 15",
-    question: "选词填空：两个人相处，最重要的是互相______与信任。",
-    audio: "",
-    options: ["A. 复杂 (fùzá)", "B. 理解 (lǐjiě)", "C. 批评 (pīpíng)", "D. 偶尔 (ǒu'ěr)"],
-    correctIndex: 1,
-    explain: "Chính xác! 理解 (lǐjiě) mang nghĩa thấu hiểu lẫn nhau."
-  },
+    topic: 1,
+    title: "Chủ đề 1: Cấu trúc 一邊……一邊…… (Vừa... vừa...)",
+    explain: "Biểu thị hai hành động xảy ra song song cùng một lúc.",
+    example: "他喜歡一邊喝茶，一邊閱讀報紙。",
+    exampleVn: "Anh ấy thích vừa uống trà vừa đọc báo."
+  }
+];
+
+// 7. KHO BÀI ĐỌC PHỒN THỂ (10 CHỦ ĐỀ)
+const tcReadingData = [
   {
-    section: "sc",
-    tag: "HSK 4 (Hạ) • Bài 15",
-    question: "选词填空（千方/千万/一定）：表扬孩子______不要太多，过多的表扬可能会带来压力。",
-    audio: "",
-    options: ["A. 千方", "B. 千万", "C. 一定", "D. 肯定"],
-    correctIndex: 1,
-    explain: "Đúng! Phó từ '千万' kết hợp dạng phủ định '千万不要' để thể hiện lời khuyên răn thiết tha."
-  },
-  {
-    section: "sc",
-    tag: "HSK 4 (Hạ) • Bài 15",
-    question: "选词填空：七岁______的儿童普遍好动，坐不住。",
-    audio: "",
-    options: ["A. 左右", "B. 上下", "C. 大概", "D. 也许"],
-    correctIndex: 0,
-    explain: "Chính xác! '左右' đứng ngay sau từ chỉ số lượng '七岁' biểu thị con số xấp xỉ khoảng 7 tuổi."
-  },
-  {
-    section: "sc",
-    tag: "HSK 4 (Hạ) • Bài 15",
-    question: "根据课文判断：当孩子性格有些害羞时，家长应该怎么做？",
-    audio: "",
-    options: ["A. 用“笨”、“粗心”批评他", "B. 经常替他做决定", "C. 经常鼓励他说出自己的看法", "D. 不让他跟别的小朋友玩"],
-    correctIndex: 2,
-    explain: "Chính xác! Bài khóa khuyên: 要是孩子性格有些害羞，就要经常鼓励他说出自己的看法."
+    topic: 1,
+    title: "主題一：日常社交問候 (Chào hỏi xã giao thường nhật)",
+    chineseText: `林先生，早安！好久不見了，您最近工作忙嗎？有空的話，我們一起去喝杯咖啡吧。`,
+    vietnameseText: `Chào buổi sáng anh Lâm! Lâu rồi không gặp, dạo này công việc của anh bận không? Nếu có thời gian rảnh, chúng ta cùng đi uống tách cà phê nhé.`
   }
 ];
