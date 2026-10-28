@@ -1605,17 +1605,29 @@
     }
 
     /* ========================================================
-       6. KHUNG TÌM KIẾM TỨC THÌ
+       6. KHUNG TÌM KIẾM TỨC THÌ (TỰ MỞ THƯ MỤC CHỨA TỪ KHÓA)
        ======================================================== */
     document.getElementById('quickSearchInput').addEventListener('input', function(e) {
       const q = e.target.value.toLowerCase().trim();
-      const cards = document.querySelectorAll('.vocab-card, .topic-card');
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
+      const items = document.querySelectorAll('.vocab-card, .topic-card, .folder-body > div');
+
+      if (q === '') {
+        // Khi xóa rỗng ô tìm kiếm: Hiện lại bình thường
+        items.forEach(el => el.style.display = '');
+        return;
+      }
+
+      items.forEach(el => {
+        const text = el.innerText.toLowerCase();
         if (text.includes(q)) {
-          card.style.display = '';
+          el.style.display = '';
+          // Tự động mở bung thư mục cha chứa từ này ra để người dùng thấy ngay
+          const parentFolder = el.closest('.folder-card');
+          if (parentFolder) {
+            parentFolder.classList.add('open');
+          }
         } else {
-          card.style.display = 'none';
+          el.style.display = 'none';
         }
       });
     });
