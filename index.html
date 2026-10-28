@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>水母 - Shuǐmǔ Học Tiếng Trung</title>
+  <title>水母 - Shuǐmǔ Học Tiếng Trung</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
@@ -36,14 +36,11 @@
     .zh-sc { font-family: 'Noto Serif SC', serif; }
     .zh-tc { font-family: 'Noto Serif TC', serif; }
 
-    /* Bling-Bling Click Particles */
+    /* Bling-Bling Particles */
     .sparkle-star {
-      position: fixed;
-      pointer-events: none;
-      z-index: 99999;
+      position: fixed; pointer-events: none; z-index: 99999;
       animation: sparkleAnim 0.75s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
-      font-size: 16px;
-      user-select: none;
+      font-size: 16px; user-select: none;
     }
     @keyframes sparkleAnim {
       0% { transform: translate(0, 0) scale(0.2) rotate(0deg); opacity: 1; }
@@ -51,18 +48,16 @@
       100% { transform: translate(var(--tx-end), var(--ty-end)) scale(0) rotate(360deg); opacity: 0; }
     }
 
-    /* Ambient Sea Bubbles */
+    /* Ambient Bubbles */
     .sea-bubbles-container {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none; z-index: 1; overflow: hidden;
     }
     .bubble {
       position: absolute; bottom: -40px;
       background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 180, 216, 0.25));
       border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      animation: floatUp linear infinite;
+      border-radius: 50%; animation: floatUp linear infinite;
     }
     @keyframes floatUp {
       0% { transform: translateY(0) translateX(0); opacity: 0; }
@@ -70,7 +65,7 @@
       100% { transform: translateY(-115vh) translateX(var(--drift)); opacity: 0; }
     }
 
-    /* Ocean Header & Waves */
+    /* Header */
     header {
       background: linear-gradient(135deg, #03045e 0%, #0077b6 60%, #0096c7 100%);
       color: white; position: relative; padding-top: 20px;
@@ -85,7 +80,7 @@
       width: 50px; height: 50px; background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(8px); border: 2px solid rgba(255, 255, 255, 0.4);
       border-radius: 14px; display: flex; align-items: center; justify-content: center;
-      font-size: 26px; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+      font-size: 28px; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
     }
     .brand-info h1 { font-size: 24px; font-weight: 700; }
     .brand-info p { font-size: 13px; opacity: 0.85; }
@@ -99,7 +94,6 @@
     .search-bar input::placeholder { color: rgba(255, 255, 255, 0.7); }
     .search-bar input:focus { background: white; color: var(--text-dark); border-color: var(--wave-cyan); }
     .search-bar i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.8); }
-    .search-bar input:focus + i { color: var(--primary-ocean); }
 
     .btn-ocean {
       background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4);
@@ -128,7 +122,7 @@
     .parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; fill: var(--bg-ocean); }
     @keyframes moveWaves { 0% { transform: translate3d(-90px, 0, 0); } 100% { transform: translate3d(85px, 0, 0); } }
 
-    /* Layout & Cards */
+    /* Main Area */
     main { max-width: 1240px; margin: 25px auto 80px auto; padding: 0 20px; position: relative; z-index: 5; }
     .page-section { display: none; }
     .page-section.active { display: block; animation: fadeIn 0.35s ease; }
@@ -141,7 +135,7 @@
     }
     .ocean-title { font-size: 22px; font-weight: 700; color: var(--deep-ocean); display: flex; align-items: center; gap: 10px; }
 
-    /* Accordion Folders */
+    /* Accordion */
     .folder-card {
       background: var(--card-bg); border-radius: 14px; border: 1px solid var(--border-wave);
       margin-bottom: 16px; box-shadow: var(--shadow); overflow: hidden;
@@ -163,7 +157,7 @@
     .folder-body { display: none; padding: 20px; border-top: 1px dashed var(--border-wave); background: rgba(248, 251, 255, 0.7); }
     .folder-card.open .folder-body { display: block; }
 
-    /* Button Level & Lesson Grids */
+    /* Sub levels & 20 Lessons */
     .sub-levels { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
     .sub-lessons {
       display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px;
@@ -180,7 +174,7 @@
       color: white; border-color: transparent; box-shadow: 0 2px 8px rgba(0, 180, 216, 0.35);
     }
 
-    /* Content Cards */
+    /* Cards */
     .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
     .vocab-card {
       background: white; border: 1px solid #e2e8f0; border-radius: 12px;
@@ -193,7 +187,7 @@
     .meaning-vn { font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 8px; }
     .example-box { background: #f8fafc; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 3px solid var(--wave-cyan); }
 
-    /* Multiple Choice & Audio Card */
+    /* Multiple Choice & Audio */
     .quiz-card {
       background: white; border: 1px solid #e2e8f0; border-radius: 14px;
       padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
@@ -210,7 +204,7 @@
     .opt-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
     .quiz-explain { margin-top: 12px; padding: 10px; border-radius: 8px; background: #f0fdf4; border-left: 3px solid #22c55e; font-size: 12px; display: none; }
 
-    /* Admin Floating Controls */
+    /* Admin Bar & Buttons */
     .admin-indicator {
       display: none; background: #fef3c7; border: 1px solid #fde68a; color: #92400e;
       padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600;
@@ -222,7 +216,7 @@
     }
     .is-admin .btn-add-content { display: inline-flex; }
 
-    /* Floating Chat & Guest Login */
+    /* Floating Chat */
     .chat-bubble-btn {
       position: fixed; bottom: 25px; right: 25px; width: 58px; height: 58px; border-radius: 50%;
       background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); color: white;
@@ -258,7 +252,7 @@
       border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
     }
 
-    /* Modals */
+    /* Modal */
     .modal-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(3, 4, 94, 0.45); backdrop-filter: blur(4px);
@@ -288,8 +282,8 @@
   <!-- Header -->
   <header>
     <div class="top-bar">
-     <a href="#" class="brand">
-        <div class="brand-logo" style="font-size: 28px;">🪼</div>
+      <a href="#" class="brand">
+        <div class="brand-logo">🪼</div>
         <div class="brand-info">
           <h1>水母 • Shuǐmǔ</h1>
           <p>Nền Tảng Tự Học Toàn Diện Giản Thể & Phồn Thể</p>
@@ -355,7 +349,7 @@
       <div class="ocean-header-card">
         <div>
           <h2 class="ocean-title"><i class="fa-solid fa-layer-group"></i> Hệ Thống HSK Giản Thể (1 Đến 6)</h2>
-          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Từ HSK 4 đến HSK 6 được chia thành 2 quyển Thượng & Hạ. Mỗi quyển gồm 20 bài học chi tiết.</p>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">HSK 4 đến HSK 6 chia 2 quyển Thượng & Hạ. Mỗi quyển phân sẵn 20 bài học chi tiết.</p>
         </div>
         <button class="btn-add-content" onclick="openNewVocabModal('sc')">
           <i class="fa-solid fa-plus"></i> Thêm từ vựng HSK
@@ -389,9 +383,9 @@
           <div class="sub-lessons" id="lessonsScVocab"></div>
 
           <div class="vocab-grid" id="vocabDisplayContainerSc">
-            <div class="vocab-card">
+            <div class="vocab-card" data-level="HSK 4 (Thượng)" data-lesson="1">
               <div class="hanzi-main zh-sc">坚持 <span class="pinyin-sub">jiānchí</span></div>
-              <span class="tag-type">Động từ • HSK 4 Thượng • Bài 1</span>
+              <span class="tag-type">Động từ • HSK 4 (Thượng) • Bài 1</span>
               <div class="meaning-vn">Kiên trì, giữ vững</div>
               <div class="example-box">
                 <p class="zh-sc">只要坚持努力，就一定能成功。</p>
@@ -501,7 +495,6 @@
           </div>
           <div class="sub-lessons" id="lessonsScPractice"></div>
           <div id="scPracticeContainer">
-            <!-- Câu hỏi trắc nghiệm rèn luyện -->
             <div class="quiz-card">
               <div style="font-weight: 700; color: var(--deep-ocean); margin-bottom: 6px;">[HSK 4 Thượng - Bài 1] Chọn từ thích hợp điền vào chỗ trống:</div>
               <p class="zh-sc" style="font-size: 16px;">两个人相处，最重要的是互相______与信任。</p>
@@ -530,7 +523,7 @@
         </button>
       </div>
 
-      <!-- FOLDER 1: TỪ VỰNG PHỒN THỂ (10 CHỦ ĐỀ) -->
+      <!-- FOLDER 1: TỪ VỰNG PHỒN THỂ -->
       <div class="folder-card open">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -545,7 +538,7 @@
         <div class="folder-body">
           <div class="sub-levels" id="tcTopicsVocab"></div>
           <div class="vocab-grid" id="vocabDisplayContainerTc">
-            <div class="vocab-card">
+            <div class="vocab-card" data-topic="1">
               <div class="hanzi-main zh-tc">認識 <span class="pinyin-sub">rènshì</span></div>
               <span class="tag-type">Động từ • Chủ đề 1</span>
               <div class="meaning-vn">Quen biết, làm quen</div>
@@ -558,7 +551,7 @@
         </div>
       </div>
 
-      <!-- FOLDER 2: NGỮ PHÁP PHỒN THỂ (DO QUẢN TRỊ VIÊN THÊM TỰ DO) -->
+      <!-- FOLDER 2: NGỮ PHÁP PHỒN THỂ -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -582,7 +575,7 @@
         </div>
       </div>
 
-      <!-- FOLDER 3: BÀI ĐỌC PHỒN THỂ (10 CHỦ ĐỀ) -->
+      <!-- FOLDER 3: BÀI ĐỌC PHỒN THỂ -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -608,7 +601,7 @@
         </div>
       </div>
 
-      <!-- FOLDER 4: BÀI TẬP PHỒN THỂ (10 CHỦ ĐỀ) -->
+      <!-- FOLDER 4: BÀI TẬP PHỒN THỂ -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -649,7 +642,7 @@
         </button>
       </div>
 
-      <!-- FOLDER 1: BÀI TẬP HÀNG NGÀY GIẢN THỂ (HSK 1 - 6 & 20 BÀI) -->
+      <!-- FOLDER 1: BÀI TẬP HÀNG NGÀY GIẢN THỂ -->
       <div class="folder-card open">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -676,7 +669,6 @@
             <div class="quiz-card">
               <span class="tag-type">HSK 4 Thượng • Bài 1 • Có Audio Nghe</span>
               <p class="zh-sc" style="font-size: 16px; font-weight: 600; margin-top: 6px;">Nghe đoạn âm thanh sau và chọn đáp án chính xác nhất:</p>
-              <!-- Demo Audio Link -->
               <audio controls class="quiz-audio-player" src="https://www.w3schools.com/html/horse.mp3"></audio>
               <div class="quiz-options">
                 <button class="opt-btn" onclick="checkAnswer(this, true, 'Chính xác! Đáp án đúng dựa trên đoạn hội thoại.')">A. 他们打算明天去买东西</button>
@@ -690,7 +682,7 @@
         </div>
       </div>
 
-      <!-- FOLDER 2: BÀI TẬP HÀNG NGÀY PHỒN THỂ (10 CHỦ ĐỀ) -->
+      <!-- FOLDER 2: BÀI TẬP HÀNG NGÀY PHỒN THỂ -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -718,7 +710,7 @@
         </div>
       </div>
 
-      <!-- FOLDER 3: KHO ĐỀ THI TRỌN BỘ CẢ QUYỂN (PHÂN TÁCH GIẢN & PHỒN) -->
+      <!-- FOLDER 3: KHO ĐỀ THI TRỌN BỘ CẢ QUYỂN -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -808,12 +800,11 @@
         <span class="modal-close" style="cursor: pointer;" onclick="closeModal('inboxModal')">&times;</span>
       </div>
       <div class="modal-body" id="inboxMessagesList" style="max-height: 450px;">
-        <!-- Tin nhắn khách hiển thị ở đây -->
       </div>
     </div>
   </div>
 
- <!-- ==================== MODAL 3: THÊM TỪ VỰNG ==================== -->
+  <!-- ==================== MODAL 3: THÊM TỪ VỰNG ==================== -->
   <div class="modal-overlay" id="newVocabModal">
     <div class="modal-content">
       <div class="modal-head">
@@ -824,14 +815,14 @@
         <input type="hidden" id="vocabTypeSystem" value="sc">
         <div class="form-group">
           <label>Chữ Hán</label>
-          <input type="text" id="inputHanzi" placeholder="Ví dụ: 坚持 hoặc 認識">
+          <input type="text" id="inputHanzi" placeholder="Ví dụ: 坚持 hoặc 護士">
         </div>
         <div class="form-group">
           <label>Phiên âm Pinyin</label>
           <input type="text" id="inputPinyin" placeholder="Ví dụ: jiānchí">
         </div>
         
-        <!-- Bộ chọn phân loại HSK / Bài hoặc Chủ đề Phồn thể -->
+        <!-- Chọn phân loại HSK / Bài hoặc Chủ đề Phồn thể -->
         <div id="scSelectGroup" class="form-row">
           <div class="form-group">
             <label>Cấp bậc HSK</label>
@@ -850,7 +841,7 @@
           <div class="form-group">
             <label>Bài học</label>
             <select id="inputLessonNum">
-              <!-- Tự động sinh từ Bài 1 đến Bài 20 -->
+              <!-- Sinh tự động từ 1 đến 20 -->
             </select>
           </div>
         </div>
@@ -873,7 +864,7 @@
 
         <div class="form-group">
           <label>Loại từ</label>
-          <input type="text" id="inputTypeTag" placeholder="Ví dụ: Động từ, Tính từ, Danh từ...">
+          <input type="text" id="inputTypeTag" placeholder="Ví dụ: Động từ, Danh từ, Tính từ...">
         </div>
         <div class="form-group">
           <label>Nghĩa tiếng Việt</label>
@@ -889,6 +880,7 @@
       </div>
     </div>
   </div>
+
   <!-- ==================== MODAL 4: THÊM BÀI TẬP & AUDIO ==================== -->
   <div class="modal-overlay" id="newQuizModal">
     <div class="modal-content" style="max-width: 550px;">
@@ -902,7 +894,7 @@
           <input type="text" id="quizQuestion" placeholder="Ví dụ: Nghe đoạn hội thoại và chọn đáp án:">
         </div>
         <div class="form-group">
-          <label>Link Audio (Tùy chọn - file mp3 trực tiếp)</label>
+          <label>Link Audio (Tùy chọn - link file .mp3 trực tiếp)</label>
           <input type="text" id="quizAudio" placeholder="https://example.com/audio.mp3">
         </div>
         <div class="form-row">
@@ -968,7 +960,6 @@
       <span style="cursor: pointer; font-size: 18px;" onclick="toggleChatWidget()">&times;</span>
     </div>
 
-    <!-- Thanh xác nhận tên khách -->
     <div class="chat-guest-bar">
       <span>Tên bạn:</span>
       <input type="text" id="guestNameInput" placeholder="Nhập họ tên để nhắn tin..." onchange="saveGuestName()">
@@ -988,13 +979,13 @@
 
   <footer>
     <div style="max-width: 1240px; margin: 0 auto;">
-    <p style="font-weight: 700; letter-spacing: 1px;">🪼 水母 • SHUǏMǓ LEARNING PLATFORM</p>
+      <p style="font-weight: 700; letter-spacing: 1px;">🪼 水母 • SHUǏMǓ LEARNING PLATFORM</p>
       <p>Hệ Thống Tự Học Toàn Diện Tiếng Trung Giản Thể & Phồn Thể</p>
     </div>
   </footer>
 
   <script>
-    /* 1. HIỆU ỨNG BLING-BLING KHI CLICK / CHẠM */
+    /* 1. HIỆU ỨNG BLING-BLING */
     const sparkleIcons = ['✦', '✧', '★', '✨', '💧', '•'];
     const sparkleColors = ['#00b4d8', '#0077b6', '#90e0ef', '#caf0f8', '#ffffff', '#ffd166'];
     function createSparkle(x, y) {
@@ -1016,7 +1007,7 @@
     }
     document.addEventListener('click', (e) => createSparkle(e.clientX, e.clientY));
 
-    /* 2. BỌT NƯỚC LƠ LỬNG */
+    /* 2. BỌT KHÍ BIỂN */
     const bubblesContainer = document.getElementById('bubblesContainer');
     for (let i = 0; i < 16; i++) {
       const b = document.createElement('div');
@@ -1030,7 +1021,7 @@
       bubblesContainer.appendChild(b);
     }
 
-    /* 3. TẠO TỰ ĐỘNG 20 BÀI CON CHO HSK & 10 CHỦ ĐỀ PHỒN THỂ */
+    /* 3. TỰ TẠO 20 BÀI CON VÀ 10 CHỦ ĐỀ */
     const lessonContainers = ['lessonsScVocab', 'lessonsScGrammar', 'lessonsScReading', 'lessonsScPractice', 'lessonsExSc'];
     lessonContainers.forEach(id => {
       const el = document.getElementById(id);
@@ -1042,6 +1033,10 @@
         btn.onclick = function() {
           el.querySelectorAll('.btn-lesson').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
+          if (id === 'lessonsScVocab') {
+            currentScLesson = i;
+            filterScVocab();
+          }
         };
         el.appendChild(btn);
       }
@@ -1063,12 +1058,16 @@
         btn.onclick = function() {
           el.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
+          if (id === 'tcTopicsVocab') {
+            currentTcTopic = idx + 1;
+            filterTcVocab();
+          }
         };
         el.appendChild(btn);
       });
     });
 
-    /* 4. ĐIỀU HƯỚNG TAB & MỞ GẬP THƯ MỤC */
+    /* 4. CHUYỂN TAB & MỞ GẬP THƯ MỤC */
     function switchMainTab(tabId, btn) {
       document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
       document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
@@ -1077,10 +1076,6 @@
     }
     function toggleFolder(header) {
       header.parentElement.classList.toggle('open');
-    }
-    function switchHskSub(btn, group) {
-      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
     }
     function switchExamType(btn, typeId) {
       btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
@@ -1113,6 +1108,9 @@
     }
 
     /* 6. QUẢN TRỊ VIÊN & HÒM THƯ TIN NHẮN KHÁCH */
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
     function openAdminModal() {
       if (localStorage.getItem('isHanyuAdmin') === 'true') {
         alert('Bạn hiện đang ở quyền Quản Trị Viên!');
@@ -1152,7 +1150,6 @@
     }
     if (localStorage.getItem('isHanyuAdmin') === 'true') applyAdminState(true);
 
-    /* Quản lý Hộp thư tin nhắn */
     function getStoredMessages() {
       return JSON.parse(localStorage.getItem('hanyu_guest_msgs') || '[]');
     }
@@ -1219,7 +1216,6 @@
       textInput.value = '';
       chatBox.scrollTop = chatBox.scrollHeight;
 
-      // Lưu tin nhắn vào hòm thư cho quản trị viên
       const msgs = getStoredMessages();
       const now = new Date();
       msgs.unshift({
@@ -1239,19 +1235,54 @@
       }, 700);
     }
 
-    /* 8. THÊM TỪ VỰNG & BÀI TẬP VÀO WEB */
-    function openModal(id) { document.getElementById(id).classList.add('active'); }
-    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+    /* 8. QUẢN LÝ LỌC & THÊM TỪ VỰNG TỪNG BÀI / CẤP HSK */
+    let currentScLevel = 'HSK 4 (Thượng)';
+    let currentScLesson = 1;
+    let currentTcTopic = 1;
 
- function openNewVocabModal(type) {
-      document.getElementById('vocabTypeSystem').value = type;
+    function populateLessonOptions() {
+      const lessonSelect = document.getElementById('inputLessonNum');
+      if (lessonSelect) {
+        lessonSelect.innerHTML = '';
+        for (let i = 1; i <= 20; i++) {
+          const opt = document.createElement('option');
+          opt.value = i;
+          opt.innerText = `Bài ${i}`;
+          lessonSelect.appendChild(opt);
+        }
+      }
+    }
+
+    function openNewVocabModal(type) {
+      populateLessonOptions();
+      const typeInput = document.getElementById('vocabTypeSystem');
+      if (typeInput) typeInput.value = type;
+
+      const scGroup = document.getElementById('scSelectGroup');
+      const tcGroup = document.getElementById('tcSelectGroup');
+
+      if (type === 'sc') {
+        if (scGroup) scGroup.style.display = 'grid';
+        if (tcGroup) tcGroup.style.display = 'none';
+        const lvlEl = document.getElementById('inputHskLevel');
+        if (lvlEl) lvlEl.value = currentScLevel;
+        const lesEl = document.getElementById('inputLessonNum');
+        if (lesEl) lesEl.value = currentScLesson;
+      } else {
+        if (scGroup) scGroup.style.display = 'none';
+        if (tcGroup) tcGroup.style.display = 'block';
+        const topEl = document.getElementById('inputTcTopic');
+        if (topEl) topEl.value = currentTcTopic;
+      }
+
       openModal('newVocabModal');
     }
+
     function saveNewVocab() {
-      const type = document.getElementById('vocabTypeSystem').value;
+      const typeInput = document.getElementById('vocabTypeSystem');
+      const type = typeInput ? typeInput.value : 'sc';
       const hanzi = document.getElementById('inputHanzi').value.trim();
       const pinyin = document.getElementById('inputPinyin').value.trim();
-      const level = document.getElementById('inputLevelTag').value.trim() || 'Mới';
       const wType = document.getElementById('inputTypeTag').value.trim() || 'Từ vựng';
       const meaning = document.getElementById('inputMeaning').value.trim();
       const example = document.getElementById('inputExample').value.trim();
@@ -1263,21 +1294,87 @@
 
       const card = document.createElement('div');
       card.className = 'vocab-card';
-      card.innerHTML = `
-        <div class="hanzi-main ${type === 'tc' ? 'zh-tc' : 'zh-sc'}">${hanzi} <span class="pinyin-sub">${pinyin}</span></div>
-        <span class="tag-type">${wType} • ${level}</span>
-        <div class="meaning-vn">${meaning}</div>
-        <div class="example-box">
-          <p class="${type === 'tc' ? 'zh-tc' : 'zh-sc'}">${example || 'Đang cập nhật ví dụ...'}</p>
-        </div>
-      `;
 
-      const container = type === 'tc' ? document.getElementById('vocabDisplayContainerTc') : document.getElementById('vocabDisplayContainerSc');
-      container.prepend(card);
+      if (type === 'sc') {
+        const lvlEl = document.getElementById('inputHskLevel');
+        const lesEl = document.getElementById('inputLessonNum');
+        const level = lvlEl ? lvlEl.value : currentScLevel;
+        const lesson = lesEl ? lesEl.value : currentScLesson;
+
+        card.setAttribute('data-level', level);
+        card.setAttribute('data-lesson', lesson);
+        card.innerHTML = `
+          <div class="hanzi-main zh-sc">${hanzi} <span class="pinyin-sub">${pinyin}</span></div>
+          <span class="tag-type">${wType} • ${level} • Bài ${lesson}</span>
+          <div class="meaning-vn">${meaning}</div>
+          <div class="example-box">
+            <p class="zh-sc">${example || 'Đang cập nhật ví dụ...'}</p>
+          </div>
+        `;
+        const container = document.getElementById('vocabDisplayContainerSc');
+        if (container) container.prepend(card);
+        filterScVocab();
+      } else {
+        const topEl = document.getElementById('inputTcTopic');
+        const topic = topEl ? topEl.value : currentTcTopic;
+
+        card.setAttribute('data-topic', topic);
+        card.innerHTML = `
+          <div class="hanzi-main zh-tc">${hanzi} <span class="pinyin-sub">${pinyin}</span></div>
+          <span class="tag-type">${wType} • Chủ đề ${topic}</span>
+          <div class="meaning-vn">${meaning}</div>
+          <div class="example-box">
+            <p class="zh-tc">${example || 'Đang cập nhật ví dụ...'}</p>
+          </div>
+        `;
+        const container = document.getElementById('vocabDisplayContainerTc');
+        if (container) container.prepend(card);
+        filterTcVocab();
+      }
+
       closeModal('newVocabModal');
+      document.getElementById('inputHanzi').value = '';
+      document.getElementById('inputPinyin').value = '';
+      document.getElementById('inputMeaning').value = '';
+      document.getElementById('inputExample').value = '';
       alert('Đã thêm từ vựng thành công!');
     }
 
+    function filterScVocab() {
+      const cards = document.querySelectorAll('#vocabDisplayContainerSc .vocab-card');
+      cards.forEach(card => {
+        const cardLevel = card.getAttribute('data-level') || 'HSK 4 (Thượng)';
+        const cardLesson = card.getAttribute('data-lesson') || '1';
+        if (cardLevel === currentScLevel && String(cardLesson) === String(currentScLesson)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function filterTcVocab() {
+      const cards = document.querySelectorAll('#vocabDisplayContainerTc .vocab-card');
+      cards.forEach(card => {
+        const cardTopic = card.getAttribute('data-topic') || '1';
+        if (String(cardTopic) === String(currentTcTopic)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function switchHskSub(btn, group) {
+      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (group === 'vocab-sc') {
+        currentScLevel = btn.innerText.trim();
+        filterScVocab();
+      }
+    }
+
+    /* 9. THÊM BÀI TẬP TRẮC NGHIỆM */
     function openNewQuizModal() { openModal('newQuizModal'); }
     function saveNewQuiz() {
       const q = document.getElementById('quizQuestion').value.trim();
@@ -1313,12 +1410,13 @@
       alert('Đã thêm câu hỏi trắc nghiệm thành công!');
     }
 
-    /* 9. TÌM KIẾM TỨC THÌ THÔNG MINH */
+    /* 10. TÌM KIẾM TỨC THÌ */
     document.getElementById('quickSearchInput').addEventListener('input', function(e) {
       const q = e.target.value.toLowerCase().trim();
       const items = document.querySelectorAll('.vocab-card, .quiz-card');
       if (q === '') {
-        items.forEach(el => el.style.display = '');
+        filterScVocab();
+        filterTcVocab();
         return;
       }
       items.forEach(el => {
@@ -1331,6 +1429,10 @@
         }
       });
     });
+
+    // Khởi tạo mặc định
+    populateLessonOptions();
+    filterScVocab();
   </script>
 </body>
 </html>
