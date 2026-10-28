@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>汉语 - Hànyǔ Học Tiếng Trung</title>
+  <title>汉语</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
@@ -1038,92 +1038,162 @@
       </div>
     </section>
 
-    <!-- ==================== TAB 2: TIẾNG PHỒN THỂ ==================== -->
+   <!-- ==================== TAB 2: TIẾNG PHỒN THỂ ==================== -->
     <section id="tab-traditional" class="page-section">
       <div class="ocean-header-card">
         <div>
           <h2 class="ocean-title"><i class="fa-solid fa-feather-pointed"></i> Tiếng Trung Phồn Thể (繁體中文)</h2>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">Chia theo 10 chủ đề thông dụng nhất trong giao tiếp và công việc hàng ngày.</p>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">Gồm Từ vựng, Bài đọc, Bài tập theo 10 chủ đề và Ngữ pháp Phồn Thể chuyên sâu.</p>
+        </div>
+        <button class="btn-add-content" onclick="openNewTcVocabModal()">
+          <i class="fa-solid fa-plus"></i> Thêm từ vựng Phồn thể
+        </button>
+      </div>
+
+      <!-- FOLDER 1: TỪ VỰNG PHỒN THỂ (10 CHỦ ĐỀ) -->
+      <div class="folder-card open">
+        <div class="folder-header" onclick="toggleFolder(this)">
+          <div class="folder-title-left">
+            <div class="folder-icon"><i class="fa-solid fa-spell-check"></i></div>
+            <div>
+              <div class="folder-name">1. Từ Vựng Theo 10 Chủ Đề (Phồn Thể)</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Từ vựng ứng dụng, phiên âm và ví dụ thực tế</small>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-down folder-chevron"></i>
+        </div>
+        <div class="folder-body">
+          <div class="sub-levels">
+            <button class="btn-level active" onclick="switchTcTopic(this, 1)">1. Giao tiếp hàng ngày</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 2)">2. Ẩm thực & Nhà hàng</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 3)">3. Giao thông & Du lịch</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 4)">4. Mua sắm & Tiêu dùng</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 5)">5. Công sở & Thương mại</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 6)">6. Gia đình & Bạn bè</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 7)">7. Cảm xúc & Tâm trạng</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 8)">8. Giải trí & Đời sống</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 9)">9. Thời tiết & Khí hậu</button>
+            <button class="btn-level" onclick="switchTcTopic(this, 10)">10. Lễ hội & Phong tục</button>
+          </div>
+
+          <div class="vocab-grid" id="tcVocabDisplayContainer">
+            <div class="vocab-card">
+              <div class="hanzi-main zh-tc">認識 <span class="pinyin-sub">rènshì</span></div>
+              <span class="tag-type">Động từ • Chủ đề 1</span>
+              <div class="meaning-vn">Quen biết, nhận biết</div>
+              <div class="example-box">
+                <p class="zh-tc">很高興認識你！</p>
+                <small style="color: var(--text-muted);">Rất vui được làm quen với bạn!</small>
+              </div>
+            </div>
+            <div class="vocab-card">
+              <div class="hanzi-main zh-tc">謝謝 <span class="pinyin-sub">xièxie</span></div>
+              <span class="tag-type">Thán từ • Chủ đề 1</span>
+              <div class="meaning-vn">Cảm ơn</div>
+              <div class="example-box">
+                <p class="zh-tc">非常謝謝你的幫忙。</p>
+                <small style="color: var(--text-muted);">Vô cùng cảm ơn sự giúp đỡ của bạn.</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="topic-grid">
-        <!-- Topic 1 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 01</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">日常社交 (Giao Tiếp Hàng Ngày)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Chào hỏi, giới thiệu bản thân, làm quen, xã giao thân mật.</p>
-          <div style="background: #f8fafc; padding: 12px; border-radius: 8px; font-size: 14px; margin-bottom: 12px;">
-            <div class="zh-tc" style="font-weight: 700; color: #0284c7;">你好！很高興認識你。</div>
-            <div style="font-size: 12px; color: var(--text-muted);">Nǐ hǎo! Hěn gāoxìng rènshì nǐ. (Rất vui được gặp bạn.)</div>
+      <!-- FOLDER 2: NGỮ PHÁP PHỒN THỂ (DO QUẢN TRỊ VIÊN THÊM VÀO, KHÔNG CHIA CHỦ ĐỀ) -->
+      <div class="folder-card">
+        <div class="folder-header" onclick="toggleFolder(this)">
+          <div class="folder-title-left">
+            <div class="folder-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <div>
+              <div class="folder-name">2. Ngữ Pháp Phồn Thể Chuyên Sâu</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Các điểm ngữ pháp do quản trị viên cập nhật</small>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-down folder-chevron"></i>
+        </div>
+        <div class="folder-body" id="tcGrammarContainer">
+          <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-ocean); margin-bottom: 12px;">
+            <h4 style="color: var(--deep-ocean); margin-bottom: 8px;">Cấu trúc: 一邊……一邊…… (Vừa... vừa...)</h4>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Diễn tả hai hành động diễn ra đồng thời cùng lúc.</p>
+            <div class="example-box">
+              <p class="zh-tc">他喜歡一邊喝茶，一邊看書。</p>
+              <small style="color: var(--text-muted);">Anh ấy thích vừa uống trà vừa đọc sách.</small>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Topic 2 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 02</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">美食與餐廳 (Ẩm Thực & Nhà Hàng)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Gọi món, hỏi giá tiền, thưởng thức trà đạo và phong vị truyền thống.</p>
-          <div style="background: #f8fafc; padding: 12px; border-radius: 8px; font-size: 14px;">
-            <div class="zh-tc" style="font-weight: 700; color: #0284c7;">老闆，請幫我結帳。</div>
-            <div style="font-size: 12px; color: var(--text-muted);">Lǎobǎn, qǐng bāng wǒ jiézhàng. (Ông chủ ơi, tính tiền giúp tôi.)</div>
+      <!-- FOLDER 3: BÀI ĐỌC PHỒN THỂ (10 CHỦ ĐỀ) -->
+      <div class="folder-card">
+        <div class="folder-header" onclick="toggleFolder(this)">
+          <div class="folder-title-left">
+            <div class="folder-icon"><i class="fa-solid fa-book-open"></i></div>
+            <div>
+              <div class="folder-name">3. Bài Đọc & Hội Thoại Theo 10 Chủ Đề</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Bài đọc hiểu ngữ cảnh văn phong phồn thể</small>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-down folder-chevron"></i>
+        </div>
+        <div class="folder-body">
+          <div class="sub-levels">
+            <button class="btn-level active">Chủ đề 1</button>
+            <button class="btn-level">Chủ đề 2</button>
+            <button class="btn-level">Chủ đề 3</button>
+            <button class="btn-level">Chủ đề 4</button>
+            <button class="btn-level">Chủ đề 5</button>
+            <button class="btn-level">Chủ đề 6</button>
+            <button class="btn-level">Chủ đề 7</button>
+            <button class="btn-level">Chủ đề 8</button>
+            <button class="btn-level">Chủ đề 9</button>
+            <button class="btn-level">Chủ đề 10</button>
+          </div>
+          <div style="background: white; padding: 20px; border-radius: 12px; line-height: 1.8;">
+            <h4 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 8px;">主題一：自我介紹與問候 (Giới thiệu bản thân & Chào hỏi)</h4>
+            <p class="zh-tc" style="font-size: 16px; margin-bottom: 12px;">
+              各位朋友大家好！我很高興來到這裡學習漢語。希望在未來的日子裡，我們能夠互相幫助，一起進步。
+            </p>
+            <small style="color: var(--text-muted);">Chào tất cả các bạn! Tôi rất vui được đến đây học tiếng Hán. Hy vọng trong những ngày sắp tới chúng ta có thể giúp đỡ lẫn nhau và cùng nhau tiến bộ.</small>
           </div>
         </div>
+      </div>
 
-        <!-- Topic 3 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 03</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">交通與旅遊 (Du Lịch & Giao Thông)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Hỏi đường, đi tàu điện ngầm, mua vé máy bay, đặt phòng khách sạn.</p>
+      <!-- FOLDER 4: BÀI TẬP PHỒN THỂ (10 CHỦ ĐỀ) -->
+      <div class="folder-card">
+        <div class="folder-header" onclick="toggleFolder(this)">
+          <div class="folder-title-left">
+            <div class="folder-icon"><i class="fa-solid fa-list-check"></i></div>
+            <div>
+              <div class="folder-name">4. Bài Tập Rèn Luyện Theo 10 Chủ Đề</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Luyện tập củng cố theo từng chủ đề bài học</small>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
-
-        <!-- Topic 4 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 04</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">購物與消費 (Mua Sắm & Trả Giá)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Thử quần áo, mặc cả, phương thức thanh toán thẻ và tiền mặt.</p>
-        </div>
-
-        <!-- Topic 5 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 05</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">職場與商務 (Công Sở & Thương Mại)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Viết thư email, báo cáo tiến độ, đàm phán hợp đồng kinh tế.</p>
-        </div>
-
-        <!-- Topic 6 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 06</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">家庭與親友 (Gia Đình & Bạn Bè)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Xưng hô họ hàng, chia sẻ về quê hương và các mối quan hệ tình cảm.</p>
-        </div>
-
-        <!-- Topic 7 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 07</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">情緒與感受 (Cảm Xúc & Tâm Trạng)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Bày tỏ sự vui buồn, lo lắng, an ủi, khen ngợi và động viên.</p>
-        </div>
-
-        <!-- Topic 8 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 08</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">娛樂與生活 (Giải Trí & Sở Thích)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Xem phim, nghe nhạc trữ tình, thể thao và các hoạt động cuối tuần.</p>
-        </div>
-
-        <!-- Topic 9 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 09</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">天氣與自然 (Thời Tiết & Khí Hậu)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Bốn mùa xuân hạ thu đông, mưa nắng, bão và biến đổi nhiệt độ.</p>
-        </div>
-
-        <!-- Topic 10 -->
-        <div class="topic-card">
-          <span class="topic-badge">Chủ Đề 10</span>
-          <h3 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">傳統節慶 (Văn Hóa & Lễ Hội)</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">Tết Nguyên Đán, Tết Trung Thu, Tết Đoan Ngọ và các phong tục cổ truyền.</p>
+        <div class="folder-body">
+          <div class="sub-levels">
+            <button class="btn-level active">Chủ đề 1</button>
+            <button class="btn-level">Chủ đề 2</button>
+            <button class="btn-level">Chủ đề 3</button>
+            <button class="btn-level">Chủ đề 4</button>
+            <button class="btn-level">Chủ đề 5</button>
+            <button class="btn-level">Chủ đề 6</button>
+            <button class="btn-level">Chủ đề 7</button>
+            <button class="btn-level">Chủ đề 8</button>
+            <button class="btn-level">Chủ đề 9</button>
+            <button class="btn-level">Chủ đề 10</button>
+          </div>
+          <div style="background: white; padding: 18px; border-radius: 12px;">
+            <div style="font-weight: 700; color: var(--deep-ocean); margin-bottom: 8px;">
+              Câu 1 (Chủ đề 1): Chọn chữ đúng để hoàn thành câu:
+            </div>
+            <p class="zh-tc" style="font-size: 16px; margin-bottom: 12px;">
+              請問你叫什麼______？ (A. 名字  B. 明天  C. 朋友)
+            </p>
+            <button class="btn-ocean" style="color: var(--primary-ocean); background: #e0f2fe; border: none; font-size: 12px;" onclick="alert('Đáp án đúng là: A. 名字 (míngzì - tên gọi)')">
+              Xem đáp án
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -1132,17 +1202,17 @@
     <section id="tab-exercises" class="page-section">
       <div class="ocean-header-card">
         <div>
-          <h2 class="ocean-title"><i class="fa-solid fa-pencil"></i> Kho Bài Tập & Đề Thi Tổng Hợp</h2>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">Luyện tập bài tập hàng ngày và làm bài thi trọn gói từng cấp bậc HSK.</p>
+          <h2 class="ocean-title"><i class="fa-solid fa-pencil"></i> Kho Bài Tập & Đề Thi Phân Loại</h2>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">Tách biệt rõ ràng bài tập hàng ngày và đề thi của cả Giản thể & Phồn thể.</p>
         </div>
       </div>
 
-      <!-- FOLDER 1: BÀI TẬP GIẢN THỂ -->
+      <!-- FOLDER 1: BÀI TẬP HÀNG NGÀY GIẢN THỂ -->
       <div class="folder-card open">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <div class="folder-name">Bài Tập Hàng Ngày (Tiếng Giản Thể)</div>
+            <div class="folder-name">1. Bài Tập Hàng Ngày (Tiếng Giản Thể)</div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
@@ -1154,60 +1224,85 @@
             <p class="zh-sc" style="font-size: 16px; margin-bottom: 12px;">
               无论遇到多大的困难，你都应该 ______ 下去。(A. 坚持  B. 保护  C. 接受)
             </p>
-            <button class="btn-ocean" style="color: var(--primary-ocean); background: #e0f2fe; border: none; font-size: 12px;" onclick="alert('Đáp án đúng là: A. 坚持 (jiānchí - kiên trì)')">
+            <button class="btn-ocean" style="color: var(--primary-ocean); background: #e0f2fe; border: none; font-size: 12px;" onclick="alert('Đáp án: A. 坚持 (jiānchí)')">
               Xem đáp án & giải thích
             </button>
           </div>
         </div>
       </div>
 
-      <!-- FOLDER 2: BÀI TẬP PHỒN THỂ -->
+      <!-- FOLDER 2: BÀI TẬP HÀNG NGÀY PHỒN THỂ -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-file-pen"></i></div>
-            <div class="folder-name">Bài Tập Hàng Ngày (Tiếng Phồn Thể)</div>
+            <div class="folder-name">2. Bài Tập Hàng Ngày (Tiếng Phồn Thể)</div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <p style="color: var(--text-muted); font-size: 14px;">Mục bài tập phồn thể hàng ngày sẽ được cập nhật liên tục theo từng chủ đề thực tế.</p>
+          <p style="color: var(--text-muted); font-size: 14px;">Nơi lưu trữ các bài tập tiếng Phồn thể do quản trị viên đưa lên mỗi ngày.</p>
         </div>
       </div>
 
-      <!-- FOLDER 3: ĐỀ THI CẢ QUYỂN (HSK 1 - 6) -->
+      <!-- FOLDER 3: ĐỀ THI CẢ QUYỂN - PHÂN TÁCH GIẢN & PHỒN -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-award"></i></div>
-            <div class="folder-name">Đề Thi Tổng Kết Cả Quyển (HSK 1 đến HSK 6)</div>
+            <div class="folder-name">3. Kho Đề Thi Trọn Bộ Cả Quyển (Tách Giản & Phồn)</div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <div class="sub-levels">
-            <button class="btn-level">Quyển 1</button>
-            <button class="btn-level">Quyển 2</button>
-            <button class="btn-level">Quyển 3</button>
-            <button class="btn-level active">Quyển 4 (Thượng)</button>
-            <button class="btn-level">Quyển 4 (Hạ)</button>
-            <button class="btn-level">Quyển 5 (Thượng)</button>
-            <button class="btn-level">Quyển 5 (Hạ)</button>
-            <button class="btn-level">Quyển 6 (Thượng)</button>
-            <button class="btn-level">Quyển 6 (Hạ)</button>
+          <!-- Phân nhánh Giản Thể vs Phồn Thể -->
+          <div style="margin-bottom: 16px;">
+            <strong style="color: var(--deep-ocean); font-size: 14px;">Chọn hệ chữ đề thi:</strong>
+            <div class="sub-levels" style="margin-top: 8px;">
+              <button class="btn-level active" onclick="switchExamType(this, 'exam-sc')">Đề Thi Giản Thể (HSK 1 - 6)</button>
+              <button class="btn-level" onclick="switchExamType(this, 'exam-tc')">Đề Thi Phồn Thể (TOCFL / Cả quyển)</button>
+            </div>
           </div>
-          <div style="background: white; padding: 24px; border-radius: 12px; text-align: center;">
-            <i class="fa-solid fa-clock-rotate-left" style="font-size: 32px; color: var(--wave-cyan); margin-bottom: 12px;"></i>
-            <h4 style="color: var(--deep-ocean); margin-bottom: 6px;">Đề thi mô phỏng HSK 4 Toàn Diện</h4>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Thời gian làm bài: 105 phút • Gồm Nghe hiểu, Đọc hiểu và Viết.</p>
-            <button class="btn-ocean" style="background: var(--primary-ocean); margin: 0 auto;" onclick="alert('Đề thi đang chuẩn bị dữ liệu!')">
-              Bắt đầu làm bài thi
-            </button>
+
+          <!-- Nhánh Đề Giản Thể -->
+          <div id="exam-sc-block">
+            <div class="sub-levels">
+              <button class="btn-level">Quyển 1</button>
+              <button class="btn-level">Quyển 2</button>
+              <button class="btn-level">Quyển 3</button>
+              <button class="btn-level active">Quyển 4 (Thượng)</button>
+              <button class="btn-level">Quyển 4 (Hạ)</button>
+              <button class="btn-level">Quyển 5 (Thượng)</button>
+              <button class="btn-level">Quyển 5 (Hạ)</button>
+              <button class="btn-level">Quyển 6 (Thượng)</button>
+              <button class="btn-level">Quyển 6 (Hạ)</button>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 12px; text-align: center; border: 1px dashed var(--border-wave);">
+              <h4 style="color: var(--deep-ocean); margin-bottom: 6px;">Đề Thi HSK 4 (Thượng) - Bản Chuẩn Giản Thể</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Thời gian: 105 phút | Gồm: Nghe - Đọc - Viết</p>
+              <button class="btn-ocean" style="background: var(--primary-ocean); margin: 0 auto;" onclick="alert('Đề thi sẵn sàng khi bạn cung cấp nội dung!')">Bắt đầu làm bài</button>
+            </div>
+          </div>
+
+          <!-- Nhánh Đề Phồn Thể -->
+          <div id="exam-tc-block" style="display: none;">
+            <div class="sub-levels">
+              <button class="btn-level active">Cấp 1</button>
+              <button class="btn-level">Cấp 2</button>
+              <button class="btn-level">Cấp 3</button>
+              <button class="btn-level">Cấp 4</button>
+              <button class="btn-level">Cấp 5</button>
+              <button class="btn-level">Cấp 6</button>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 12px; text-align: center; border: 1px dashed var(--border-wave);">
+              <h4 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">模擬試題 - 繁體中文全卷測驗</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Bộ đề kiểm tra toàn diện tiếng Phồn thể</p>
+              <button class="btn-ocean" style="background: var(--primary-ocean); margin: 0 auto;" onclick="alert('Đang chuẩn bị đề thi phồn thể!')">開始測驗 (Bắt đầu)</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  </main>
 
   <!-- ==================== MODAL: ĐĂNG NHẬP QUẢN TRỊ ==================== -->
   <div class="modal-overlay" id="adminModal">
@@ -1446,7 +1541,27 @@
       parent.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
+/* Xử lý chuyển tab đề thi Giản / Phồn và Chủ đề Phồn thể */
+    function switchExamType(btn, typeId) {
+      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (typeId === 'exam-sc') {
+        document.getElementById('exam-sc-block').style.display = 'block';
+        document.getElementById('exam-tc-block').style.display = 'none';
+      } else {
+        document.getElementById('exam-sc-block').style.display = 'none';
+        document.getElementById('exam-tc-block').style.display = 'block';
+      }
+    }
 
+    function switchTcTopic(btn, topicIndex) {
+      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function openNewTcVocabModal() {
+      openNewVocabModal(); // Tận dụng popup thêm từ vựng với font Phồn Thể
+    }
     /* ========================================================
        5. THÊM TỪ VỰNG MỚI (LƯU VÀO WEB)
        ======================================================== */
