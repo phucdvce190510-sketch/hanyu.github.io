@@ -813,7 +813,7 @@
     </div>
   </div>
 
-  <!-- ==================== MODAL 3: THÊM TỪ VỰNG ==================== -->
+ <!-- ==================== MODAL 3: THÊM TỪ VỰNG ==================== -->
   <div class="modal-overlay" id="newVocabModal">
     <div class="modal-content">
       <div class="modal-head">
@@ -824,37 +824,71 @@
         <input type="hidden" id="vocabTypeSystem" value="sc">
         <div class="form-group">
           <label>Chữ Hán</label>
-          <input type="text" id="inputHanzi" placeholder="Ví dụ: 成功 hoặc 繁體">
+          <input type="text" id="inputHanzi" placeholder="Ví dụ: 坚持 hoặc 認識">
         </div>
         <div class="form-group">
           <label>Phiên âm Pinyin</label>
-          <input type="text" id="inputPinyin" placeholder="Ví dụ: chénggōng">
+          <input type="text" id="inputPinyin" placeholder="Ví dụ: jiānchí">
         </div>
-        <div class="form-row">
+        
+        <!-- Bộ chọn phân loại HSK / Bài hoặc Chủ đề Phồn thể -->
+        <div id="scSelectGroup" class="form-row">
           <div class="form-group">
-            <label>Phân loại bài / Cấp</label>
-            <input type="text" id="inputLevelTag" placeholder="Ví dụ: HSK 4 Thượng - Bài 2">
+            <label>Cấp bậc HSK</label>
+            <select id="inputHskLevel">
+              <option value="HSK 1">HSK 1</option>
+              <option value="HSK 2">HSK 2</option>
+              <option value="HSK 3">HSK 3</option>
+              <option value="HSK 4 (Thượng)" selected>HSK 4 (Thượng)</option>
+              <option value="HSK 4 (Hạ)">HSK 4 (Hạ)</option>
+              <option value="HSK 5 (Thượng)">HSK 5 (Thượng)</option>
+              <option value="HSK 5 (Hạ)">HSK 5 (Hạ)</option>
+              <option value="HSK 6 (Thượng)">HSK 6 (Thượng)</option>
+              <option value="HSK 6 (Hạ)">HSK 6 (Hạ)</option>
+            </select>
           </div>
           <div class="form-group">
-            <label>Loại từ</label>
-            <input type="text" id="inputTypeTag" placeholder="Ví dụ: Động từ, Danh từ">
+            <label>Bài học</label>
+            <select id="inputLessonNum">
+              <!-- Tự động sinh từ Bài 1 đến Bài 20 -->
+            </select>
           </div>
+        </div>
+
+        <div id="tcSelectGroup" class="form-group" style="display: none;">
+          <label>Chủ đề Phồn thể</label>
+          <select id="inputTcTopic">
+            <option value="1">1. Giao tiếp hàng ngày</option>
+            <option value="2">2. Ẩm thực & Nhà hàng</option>
+            <option value="3">3. Giao thông & Du lịch</option>
+            <option value="4">4. Mua sắm & Tiêu dùng</option>
+            <option value="5">5. Công sở & Thương mại</option>
+            <option value="6">6. Gia đình & Bạn bè</option>
+            <option value="7">7. Cảm xúc & Tâm trạng</option>
+            <option value="8">8. Giải trí & Đời sống</option>
+            <option value="9">9. Thời tiết & Khí hậu</option>
+            <option value="10">10. Lễ hội & Phong tục</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Loại từ</label>
+          <input type="text" id="inputTypeTag" placeholder="Ví dụ: Động từ, Tính từ, Danh từ...">
         </div>
         <div class="form-group">
           <label>Nghĩa tiếng Việt</label>
-          <input type="text" id="inputMeaning" placeholder="Ví dụ: Thành công">
+          <input type="text" id="inputMeaning" placeholder="Ví dụ: Kiên trì, giữ vững">
         </div>
         <div class="form-group">
           <label>Câu ví dụ thực tế</label>
           <textarea id="inputExample" rows="2" placeholder="Ví dụ câu ứng dụng..."></textarea>
         </div>
         <button class="btn-ocean" style="background: var(--primary-ocean); justify-content: center; width: 100%; padding: 12px;" onclick="saveNewVocab()">
-          Lưu Vào Web
+          Lưu Vào Mục Đã Chọn
         </button>
       </div>
     </div>
   </div>
-
   <!-- ==================== MODAL 4: THÊM BÀI TẬP & AUDIO ==================== -->
   <div class="modal-overlay" id="newQuizModal">
     <div class="modal-content" style="max-width: 550px;">
@@ -1209,7 +1243,7 @@
     function openModal(id) { document.getElementById(id).classList.add('active'); }
     function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
-    function openNewVocabModal(type) {
+ function openNewVocabModal(type) {
       document.getElementById('vocabTypeSystem').value = type;
       openModal('newVocabModal');
     }
