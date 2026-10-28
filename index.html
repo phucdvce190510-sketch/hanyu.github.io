@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>汉语</title>
+ <title>水母 - Shuǐmǔ Học Tiếng Trung</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -15,22 +15,15 @@
       --deep-ocean: #03045e;
       --wave-cyan: #00b4d8;
       --foam-light: #caf0f8;
-      --sea-sky: #90e0ef;
       --bg-ocean: #f0f9ff;
       --card-bg: rgba(255, 255, 255, 0.95);
       --text-dark: #0f172a;
       --text-muted: #475569;
-      --shadow: 0 10px 25px -5px rgba(0, 119, 182, 0.12), 0 8px 10px -6px rgba(0, 119, 182, 0.08);
       --border-wave: #bde0fe;
+      --shadow: 0 10px 25px -5px rgba(0, 119, 182, 0.12);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
     body {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 250px, #eaf4fc 100%);
@@ -43,7 +36,7 @@
     .zh-sc { font-family: 'Noto Serif SC', serif; }
     .zh-tc { font-family: 'Noto Serif TC', serif; }
 
-    /* Sparkle Particle */
+    /* Bling-Bling Click Particles */
     .sparkle-star {
       position: fixed;
       pointer-events: none;
@@ -52,804 +45,266 @@
       font-size: 16px;
       user-select: none;
     }
-
     @keyframes sparkleAnim {
-      0% {
-        transform: translate(0, 0) scale(0.2) rotate(0deg);
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.9;
-        transform: translate(var(--tx), var(--ty)) scale(1.3) rotate(180deg);
-      }
-      100% {
-        transform: translate(var(--tx-end), var(--ty-end)) scale(0) rotate(360deg);
-        opacity: 0;
-      }
+      0% { transform: translate(0, 0) scale(0.2) rotate(0deg); opacity: 1; }
+      50% { opacity: 0.9; transform: translate(var(--tx), var(--ty)) scale(1.3) rotate(180deg); }
+      100% { transform: translate(var(--tx-end), var(--ty-end)) scale(0) rotate(360deg); opacity: 0; }
     }
 
     /* Ambient Sea Bubbles */
     .sea-bubbles-container {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 1; overflow: hidden;
     }
-
     .bubble {
-      position: absolute;
-      bottom: -40px;
+      position: absolute; bottom: -40px;
       background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 180, 216, 0.25));
       border: 1px solid rgba(255, 255, 255, 0.6);
       border-radius: 50%;
       animation: floatUp linear infinite;
     }
-
     @keyframes floatUp {
-      0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-      }
-      10% { opacity: 0.6; }
-      90% { opacity: 0.6; }
-      100% {
-        transform: translateY(-115vh) translateX(var(--drift));
-        opacity: 0;
-      }
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 0.6; } 90% { opacity: 0.6; }
+      100% { transform: translateY(-115vh) translateX(var(--drift)); opacity: 0; }
     }
 
-    /* Ocean Header with Wave SVG */
+    /* Ocean Header & Waves */
     header {
       background: linear-gradient(135deg, #03045e 0%, #0077b6 60%, #0096c7 100%);
-      color: white;
-      position: relative;
-      padding-top: 20px;
-      box-shadow: 0 4px 20px rgba(3, 4, 94, 0.2);
-      z-index: 10;
+      color: white; position: relative; padding-top: 20px;
+      box-shadow: 0 4px 20px rgba(3, 4, 94, 0.2); z-index: 10;
     }
-
     .top-bar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px 25px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+      max-width: 1240px; margin: 0 auto; padding: 0 24px 25px 24px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-      color: white;
-    }
-
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: white; }
     .brand-logo {
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+      width: 50px; height: 50px; background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px); border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 26px; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
     }
+    .brand-info h1 { font-size: 24px; font-weight: 700; }
+    .brand-info p { font-size: 13px; opacity: 0.85; }
 
-    .brand-info h1 {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .brand-info p {
-      font-size: 13px;
-      opacity: 0.85;
-      font-weight: 400;
-    }
-
-    .search-bar {
-      position: relative;
-      flex-grow: 1;
-      max-width: 380px;
-    }
-
+    .search-bar { position: relative; flex-grow: 1; max-width: 380px; }
     .search-bar input {
-      width: 100%;
-      padding: 10px 16px 10px 40px;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
-      font-size: 14px;
-      outline: none;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
+      width: 100%; padding: 10px 16px 10px 40px; border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.15);
+      color: white; font-size: 14px; outline: none; transition: 0.3s;
     }
-
-    .search-bar input::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .search-bar input:focus {
-      background: white;
-      color: var(--text-dark);
-      border-color: var(--wave-cyan);
-      box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
-    }
-
-    .search-bar i {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .search-bar input:focus + i {
-      color: var(--primary-ocean);
-    }
-
-    .user-actions {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
+    .search-bar input::placeholder { color: rgba(255, 255, 255, 0.7); }
+    .search-bar input:focus { background: white; color: var(--text-dark); border-color: var(--wave-cyan); }
+    .search-bar i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.8); }
+    .search-bar input:focus + i { color: var(--primary-ocean); }
 
     .btn-ocean {
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: white;
-      padding: 9px 18px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-      backdrop-filter: blur(5px);
+      background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white; padding: 9px 18px; border-radius: 20px; cursor: pointer;
+      font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s;
     }
-
-    .btn-ocean:hover {
-      background: white;
-      color: var(--deep-ocean);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    }
+    .btn-ocean:hover { background: white; color: var(--deep-ocean); transform: translateY(-2px); }
 
     .ocean-nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      gap: 8px;
-      position: relative;
-      z-index: 2;
+      max-width: 1240px; margin: 0 auto; padding: 0 24px;
+      display: flex; gap: 8px; position: relative; z-index: 2; overflow-x: auto;
     }
-
     .nav-tab {
-      padding: 12px 24px;
-      border-radius: 12px 12px 0 0;
-      border: none;
-      background: transparent;
-      color: rgba(255, 255, 255, 0.75);
-      font-weight: 600;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      padding: 12px 22px; border-radius: 12px 12px 0 0; border: none;
+      background: transparent; color: rgba(255, 255, 255, 0.75);
+      font-weight: 600; font-size: 15px; cursor: pointer; display: flex; align-items: center; gap: 8px; white-space: nowrap;
     }
+    .nav-tab.active { background: var(--bg-ocean); color: var(--deep-ocean); }
 
-    .nav-tab:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.1);
-    }
+    .waves-banner { width: 100%; height: 45px; margin-bottom: -7px; position: relative; }
+    .waves-banner svg { position: absolute; width: 100%; height: 45px; bottom: 0; }
+    .parallax > use { animation: moveWaves 25s cubic-bezier(.55,.5,.45,.5) infinite; }
+    .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; fill: rgba(240, 249, 255, 0.3); }
+    .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; fill: rgba(240, 249, 255, 0.5); }
+    .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; fill: rgba(240, 249, 255, 0.8); }
+    .parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; fill: var(--bg-ocean); }
+    @keyframes moveWaves { 0% { transform: translate3d(-90px, 0, 0); } 100% { transform: translate3d(85px, 0, 0); } }
 
-    .nav-tab.active {
-      background: var(--bg-ocean);
-      color: var(--deep-ocean);
-      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Wave SVG Banner */
-    .waves-banner {
-      width: 100%;
-      height: 48px;
-      margin-bottom: -7px;
-      min-height: 48px;
-      position: relative;
-    }
-
-    .waves-banner svg {
-      position: absolute;
-      width: 100%;
-      height: 48px;
-      bottom: 0;
-    }
-
-    .parallax > use {
-      animation: moveWaves 25s cubic-bezier(.55,.5,.45,.5) infinite;
-    }
-    .parallax > use:nth-child(1) {
-      animation-delay: -2s;
-      animation-duration: 7s;
-      fill: rgba(240, 249, 255, 0.3);
-    }
-    .parallax > use:nth-child(2) {
-      animation-delay: -3s;
-      animation-duration: 10s;
-      fill: rgba(240, 249, 255, 0.5);
-    }
-    .parallax > use:nth-child(3) {
-      animation-delay: -4s;
-      animation-duration: 13s;
-      fill: rgba(240, 249, 255, 0.8);
-    }
-    .parallax > use:nth-child(4) {
-      animation-delay: -5s;
-      animation-duration: 20s;
-      fill: var(--bg-ocean);
-    }
-
-    @keyframes moveWaves {
-      0% { transform: translate3d(-90px, 0, 0); }
-      100% { transform: translate3d(85px, 0, 0); }
-    }
-
-    /* Main Container */
-    main {
-      max-width: 1200px;
-      margin: 25px auto 80px auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 5;
-    }
-
-    .page-section {
-      display: none;
-      animation: fadeIn 0.4s ease forwards;
-    }
-
-    .page-section.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* Layout & Cards */
+    main { max-width: 1240px; margin: 25px auto 80px auto; padding: 0 20px; position: relative; z-index: 5; }
+    .page-section { display: none; }
+    .page-section.active { display: block; animation: fadeIn 0.35s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
     .ocean-header-card {
       background: linear-gradient(135deg, white 0%, #e0f2fe 100%);
-      border: 1px solid var(--border-wave);
-      padding: 24px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+      border: 1px solid var(--border-wave); padding: 22px; border-radius: 16px;
+      margin-bottom: 24px; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;
     }
+    .ocean-title { font-size: 22px; font-weight: 700; color: var(--deep-ocean); display: flex; align-items: center; gap: 10px; }
 
-    .ocean-title {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--deep-ocean);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* Accordion Folder System */
+    /* Accordion Folders */
     .folder-card {
-      background: var(--card-bg);
-      border-radius: 14px;
-      border: 1px solid var(--border-wave);
-      margin-bottom: 16px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: all 0.3s ease;
+      background: var(--card-bg); border-radius: 14px; border: 1px solid var(--border-wave);
+      margin-bottom: 16px; box-shadow: var(--shadow); overflow: hidden;
     }
-
     .folder-header {
-      padding: 18px 22px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      user-select: none;
-      transition: background 0.25s;
+      padding: 16px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      background: white; user-select: none;
     }
-
-    .folder-header:hover {
-      background: #f8fbff;
-    }
-
-    .folder-title-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
+    .folder-header:hover { background: #f8fbff; }
+    .folder-title-left { display: flex; align-items: center; gap: 12px; }
     .folder-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
+      width: 38px; height: 38px; border-radius: 10px;
       background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+      color: white; display: flex; align-items: center; justify-content: center; font-size: 16px;
     }
+    .folder-name { font-size: 16px; font-weight: 700; color: var(--deep-ocean); }
+    .folder-chevron { color: var(--wave-cyan); transition: transform 0.3s; }
+    .folder-card.open .folder-chevron { transform: rotate(180deg); }
+    .folder-body { display: none; padding: 20px; border-top: 1px dashed var(--border-wave); background: rgba(248, 251, 255, 0.7); }
+    .folder-card.open .folder-body { display: block; }
 
-    .folder-name {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--deep-ocean);
+    /* Button Level & Lesson Grids */
+    .sub-levels { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .sub-lessons {
+      display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px;
+      padding: 12px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;
     }
-
-    .folder-chevron {
-      color: var(--wave-cyan);
-      transition: transform 0.3s;
-      font-size: 16px;
+    .btn-level, .btn-lesson {
+      padding: 6px 14px; border-radius: 16px; border: 1px solid var(--border-wave);
+      background: white; color: var(--text-muted); font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s;
     }
-
-    .folder-card.open .folder-chevron {
-      transform: rotate(180deg);
-    }
-
-    .folder-body {
-      display: none;
-      padding: 20px;
-      border-top: 1px dashed var(--border-wave);
-      background: rgba(248, 251, 255, 0.7);
-    }
-
-    .folder-card.open .folder-body {
-      display: block;
-    }
-
-    /* Sub Tabs & Level Buttons */
-    .sub-levels {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .btn-level {
-      padding: 8px 16px;
-      border-radius: 20px;
-      border: 1px solid var(--border-wave);
-      background: white;
-      color: var(--text-muted);
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .btn-level:hover {
-      border-color: var(--wave-cyan);
-      color: var(--primary-ocean);
-    }
-
-    .btn-level.active {
+    .btn-lesson { padding: 4px 10px; border-radius: 6px; font-size: 11px; }
+    .btn-level:hover, .btn-lesson:hover { border-color: var(--wave-cyan); color: var(--primary-ocean); }
+    .btn-level.active, .btn-lesson.active {
       background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
-      color: white;
-      border-color: transparent;
-      box-shadow: 0 3px 10px rgba(0, 180, 216, 0.35);
+      color: white; border-color: transparent; box-shadow: 0 2px 8px rgba(0, 180, 216, 0.35);
     }
 
-    /* Content Cards (Vocab, Grammar, Reading) */
-    .vocab-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
+    /* Content Cards */
+    .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
     .vocab-card {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
+      background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); transition: 0.2s;
     }
+    .vocab-card:hover { transform: translateY(-2px); border-color: var(--wave-cyan); box-shadow: 0 8px 18px rgba(0, 119, 182, 0.12); }
+    .hanzi-main { font-size: 30px; font-weight: 700; color: var(--deep-ocean); display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+    .pinyin-sub { font-size: 15px; color: var(--primary-ocean); font-weight: 500; }
+    .tag-type { background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; display: inline-block; margin-bottom: 8px; }
+    .meaning-vn { font-size: 14px; font-weight: 600; color: #1e293b; margin-bottom: 8px; }
+    .example-box { background: #f8fafc; padding: 10px; border-radius: 8px; font-size: 13px; border-left: 3px solid var(--wave-cyan); }
 
-    .vocab-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(0, 119, 182, 0.12);
-      border-color: var(--wave-cyan);
+    /* Multiple Choice & Audio Card */
+    .quiz-card {
+      background: white; border: 1px solid #e2e8f0; border-radius: 14px;
+      padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     }
-
-    .hanzi-main {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--deep-ocean);
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 6px;
+    .quiz-audio-player { width: 100%; margin: 12px 0 16px 0; height: 38px; border-radius: 20px; }
+    .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+    @media(max-width: 600px) { .quiz-options { grid-template-columns: 1fr; } }
+    .opt-btn {
+      padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px;
+      background: #f8fafc; text-align: left; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;
     }
+    .opt-btn:hover { background: #e0f2fe; border-color: var(--wave-cyan); }
+    .opt-btn.correct { background: #dcfce7 !important; border-color: #22c55e !important; color: #15803d !important; font-weight: 700; }
+    .opt-btn.wrong { background: #fee2e2 !important; border-color: #ef4444 !important; color: #b91c1c !important; }
+    .quiz-explain { margin-top: 12px; padding: 10px; border-radius: 8px; background: #f0fdf4; border-left: 3px solid #22c55e; font-size: 12px; display: none; }
 
-    .pinyin-sub {
-      font-size: 16px;
-      color: var(--primary-ocean);
-      font-weight: 500;
-    }
-
-    .tag-type {
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-
-    .meaning-vn {
-      font-size: 15px;
-      font-weight: 600;
-      color: #1e293b;
-      margin-bottom: 10px;
-    }
-
-    .example-box {
-      background: #f8fafc;
-      padding: 10px;
-      border-radius: 8px;
-      font-size: 13px;
-      border-left: 3px solid var(--wave-cyan);
-    }
-
-    /* Traditional Chinese Topics Grid */
-    .topic-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 18px;
-    }
-
-    .topic-card {
-      background: white;
-      border: 1px solid var(--border-wave);
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: var(--shadow);
-      transition: all 0.3s;
-    }
-
-    .topic-card:hover {
-      border-color: var(--primary-ocean);
-      box-shadow: 0 10px 20px rgba(0, 119, 182, 0.15);
-    }
-
-    .topic-badge {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: #e0f2fe;
-      color: var(--deep-ocean);
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    /* Floating Chat Bubble & Widget */
-    .chat-bubble-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
-      cursor: pointer;
-      z-index: 1000;
-      border: none;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .chat-bubble-btn:hover {
-      transform: scale(1.08) rotate(5deg);
-    }
-
-    .chat-widget {
-      position: fixed;
-      bottom: 95px;
-      right: 25px;
-      width: 350px;
-      max-width: calc(100vw - 50px);
-      height: 480px;
-      background: white;
-      border-radius: 18px;
-      box-shadow: 0 15px 35px rgba(3, 4, 94, 0.2);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 1001;
-      border: 1px solid var(--border-wave);
-      animation: popIn 0.3s ease;
-    }
-
-    .chat-widget.active {
-      display: flex;
-    }
-
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.9) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .chat-header {
-      background: linear-gradient(135deg, #03045e 0%, #0077b6 100%);
-      color: white;
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .chat-messages {
-      flex: 1;
-      padding: 16px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      background: #f8fafc;
-    }
-
-    .msg {
-      max-width: 80%;
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .msg.bot {
-      background: white;
-      border: 1px solid #e2e8f0;
-      align-self: flex-start;
-      border-bottom-left-radius: 4px;
-    }
-
-    .msg.user {
-      background: #0077b6;
-      color: white;
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-    }
-
-    .chat-input-bar {
-      padding: 12px;
-      border-top: 1px solid #e2e8f0;
-      display: flex;
-      gap: 8px;
-      background: white;
-    }
-
-    .chat-input-bar input {
-      flex: 1;
-      padding: 10px 14px;
-      border-radius: 20px;
-      border: 1px solid #cbd5e1;
-      outline: none;
-      font-size: 13px;
-    }
-
-    .chat-input-bar button {
-      background: #0077b6;
-      color: white;
-      border: none;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Modal Admin / New Content */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(3, 4, 94, 0.4);
-      backdrop-filter: blur(4px);
-      z-index: 2000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
-    .modal-content {
-      background: white;
-      width: 100%;
-      max-width: 480px;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      border: 1px solid var(--border-wave);
-      animation: popIn 0.3s ease;
-    }
-
-    .modal-head {
-      background: linear-gradient(135deg, #03045e 0%, #0077b6 100%);
-      color: white;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .modal-head h3 {
-      font-size: 17px;
-      font-weight: 700;
-    }
-
-    .modal-close {
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    .modal-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--deep-ocean);
-      margin-bottom: 6px;
-    }
-
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%;
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      font-size: 14px;
-      font-family: inherit;
-      outline: none;
-    }
-
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--wave-cyan);
-      box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
-    }
-
-    /* Admin Bar */
+    /* Admin Floating Controls */
     .admin-indicator {
-      display: none;
-      background: #fef3c7;
-      border: 1px solid #fde68a;
-      color: #92400e;
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      font-weight: 600;
+      display: none; background: #fef3c7; border: 1px solid #fde68a; color: #92400e;
+      padding: 10px 20px; border-radius: 10px; margin-bottom: 20px; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600;
     }
-
-    .admin-indicator.active {
-      display: flex;
-    }
-
+    .admin-indicator.active { display: flex; }
     .btn-add-content {
-      display: none;
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      color: white;
-      padding: 9px 16px;
-      border-radius: 20px;
-      border: none;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 16px;
+      display: none; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: white; padding: 8px 16px; border-radius: 20px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; align-items: center; gap: 6px;
+    }
+    .is-admin .btn-add-content { display: inline-flex; }
+
+    /* Floating Chat & Guest Login */
+    .chat-bubble-btn {
+      position: fixed; bottom: 25px; right: 25px; width: 58px; height: 58px; border-radius: 50%;
+      background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%); color: white;
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+      box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4); cursor: pointer; z-index: 1000; border: none;
+    }
+    .chat-widget {
+      position: fixed; bottom: 95px; right: 25px; width: 360px; max-width: calc(100vw - 40px);
+      height: 490px; background: white; border-radius: 18px; box-shadow: 0 15px 35px rgba(3, 4, 94, 0.2);
+      display: none; flex-direction: column; overflow: hidden; z-index: 1001; border: 1px solid var(--border-wave);
+    }
+    .chat-widget.active { display: flex; }
+    .chat-header {
+      background: linear-gradient(135deg, #03045e 0%, #0077b6 100%); color: white;
+      padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .chat-guest-bar {
+      background: #e0f2fe; padding: 10px 14px; font-size: 12px; display: flex;
+      gap: 6px; align-items: center; border-bottom: 1px solid var(--border-wave);
+    }
+    .chat-guest-bar input {
+      flex: 1; padding: 6px 10px; border-radius: 6px; border: 1px solid #94a3b8; outline: none; font-size: 12px;
+    }
+    .chat-messages { flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #f8fafc; }
+    .msg { max-width: 82%; padding: 8px 12px; border-radius: 12px; font-size: 13px; line-height: 1.4; }
+    .msg.bot { background: white; border: 1px solid #e2e8f0; align-self: flex-start; }
+    .msg.user { background: #0077b6; color: white; align-self: flex-end; }
+    .msg-sender { font-size: 10px; font-weight: 700; color: #00b4d8; margin-bottom: 2px; }
+    .chat-input-bar { padding: 10px 14px; border-top: 1px solid #e2e8f0; display: flex; gap: 8px; background: white; }
+    .chat-input-bar input { flex: 1; padding: 8px 14px; border-radius: 20px; border: 1px solid #cbd5e1; outline: none; font-size: 13px; }
+    .chat-input-bar button {
+      background: #0077b6; color: white; border: none; width: 36px; height: 36px;
+      border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
     }
 
-    .is-admin .btn-add-content {
-      display: inline-flex;
+    /* Modals */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(3, 4, 94, 0.45); backdrop-filter: blur(4px);
+      z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
     }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: white; width: 100%; max-width: 500px; border-radius: 18px;
+      overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); border: 1px solid var(--border-wave);
+      max-height: 90vh; display: flex; flex-direction: column;
+    }
+    .modal-head { background: linear-gradient(135deg, #03045e 0%, #0077b6 100%); color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .modal-body { padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--deep-ocean); margin-bottom: 4px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 13px; font-family: inherit; outline: none;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-    /* Footer */
-    footer {
-      background: #03045e;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 13px;
-      position: relative;
-      z-index: 5;
-    }
-
-    footer p {
-      opacity: 0.8;
-      margin-top: 6px;
-    }
-
-    @media (max-width: 768px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .search-bar {
-        max-width: 100%;
-      }
-      .ocean-nav {
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-    }
+    footer { background: #03045e; color: white; padding: 25px 20px; text-align: center; font-size: 13px; z-index: 5; position: relative; }
   </style>
 </head>
 <body>
 
-  <!-- Floating Ambient Bubbles -->
   <div class="sea-bubbles-container" id="bubblesContainer"></div>
 
-  <!-- Ocean Header -->
+  <!-- Header -->
   <header>
     <div class="top-bar">
-      <a href="#" class="brand">
-        <div class="brand-logo zh-sc">汉</div>
+     <a href="#" class="brand">
+        <div class="brand-logo" style="font-size: 28px;">🪼</div>
         <div class="brand-info">
-          <h1>汉语 • Hànyǔ</h1>
-          <p>Kho Tàng Học Hán Ngữ Toàn Diện</p>
+          <h1>水母 • Shuǐmǔ</h1>
+          <p>Nền Tảng Tự Học Toàn Diện Giản Thể & Phồn Thể</p>
         </div>
       </a>
 
       <div class="search-bar">
-        <input type="text" id="quickSearchInput" placeholder="Tìm nhanh từ vựng, ngữ pháp, pinyin...">
+        <input type="text" id="quickSearchInput" placeholder="Tìm nhanh từ vựng, pinyin, ngữ pháp...">
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
 
       <div class="user-actions">
+        <button class="btn-ocean" id="inboxBtn" style="display: none;" onclick="openInboxModal()">
+          <i class="fa-solid fa-envelope"></i> Tin Nhắn (<span id="inboxBadge">0</span>)
+        </button>
         <button class="btn-ocean" id="adminToggleBtn" onclick="openAdminModal()">
           <i class="fa-solid fa-user-shield"></i> <span id="adminBtnText">Quản Trị</span>
         </button>
@@ -858,24 +313,21 @@
 
     <!-- Navigation Tabs -->
     <nav class="ocean-nav">
-      <button class="nav-tab active" onclick="switchMainTab('tab-simplified')">
+      <button class="nav-tab active" onclick="switchMainTab('tab-simplified', this)">
         <i class="fa-solid fa-book"></i> Tiếng Giản Thể (HSK)
       </button>
-      <button class="nav-tab" onclick="switchMainTab('tab-traditional')">
-        <i class="fa-solid fa-feather-pointed"></i> Tiếng Phồn Thể
+      <button class="nav-tab" onclick="switchMainTab('tab-traditional', this)">
+        <i class="fa-solid fa-feather-pointed"></i> Tiếng Phồn Thể (10 Chủ Đề)
       </button>
-      <button class="nav-tab" onclick="switchMainTab('tab-exercises')">
+      <button class="nav-tab" onclick="switchMainTab('tab-exercises', this)">
         <i class="fa-solid fa-pen-to-square"></i> Kho Bài Tập & Đề Thi
       </button>
     </nav>
 
-    <!-- Wave SVG Animations -->
+    <!-- Wave Effect -->
     <div class="waves-banner">
-      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+        <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
         <g class="parallax">
           <use xlink:href="#gentle-wave" x="48" y="0" />
           <use xlink:href="#gentle-wave" x="48" y="3" />
@@ -886,21 +338,26 @@
     </div>
   </header>
 
-  <main id="mainAppArea">
+  <main>
     <!-- Admin Active Bar -->
     <div class="admin-indicator" id="adminBar">
       <span><i class="fa-solid fa-circle-check"></i> Chế độ Quản trị viên đang kích hoạt.</span>
-      <button onclick="logoutAdmin()" style="background: none; border: none; color: #b91c1c; font-weight: 700; cursor: pointer;">Đăng xuất</button>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <button onclick="openInboxModal()" style="background: none; border: none; color: #0284c7; font-weight: 700; cursor: pointer;">
+          <i class="fa-solid fa-inbox"></i> Xem hòm thư khách (<span id="inboxCount">0</span>)
+        </button>
+        <button onclick="logoutAdmin()" style="background: none; border: none; color: #b91c1c; font-weight: 700; cursor: pointer;">Đăng xuất</button>
+      </div>
     </div>
 
-    <!-- ==================== TAB 1: GIẢN THỂ (HSK) ==================== -->
+    <!-- ==================== TAB 1: GIẢN THỂ (HSK 1 - 6) ==================== -->
     <section id="tab-simplified" class="page-section active">
       <div class="ocean-header-card">
         <div>
-          <h2 class="ocean-title"><i class="fa-solid fa-layer-group"></i> Hệ Thống HSK Giản Thể</h2>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">Bao gồm toàn bộ từ vựng, ngữ pháp, bài đọc và bài tập từ HSK 1 đến HSK 6.</p>
+          <h2 class="ocean-title"><i class="fa-solid fa-layer-group"></i> Hệ Thống HSK Giản Thể (1 Đến 6)</h2>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Từ HSK 4 đến HSK 6 được chia thành 2 quyển Thượng & Hạ. Mỗi quyển gồm 20 bài học chi tiết.</p>
         </div>
-        <button class="btn-add-content" onclick="openNewVocabModal()">
+        <button class="btn-add-content" onclick="openNewVocabModal('sc')">
           <i class="fa-solid fa-plus"></i> Thêm từ vựng HSK
         </button>
       </div>
@@ -911,54 +368,34 @@
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-spell-check"></i></div>
             <div>
-              <div class="folder-name">1. Kho Từ Vựng HSK Chuẩn</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Đầy đủ Hán tự, Pinyin, loại từ, ví dụ ứng dụng</small>
+              <div class="folder-name">1. Từ Vựng Từng Cấp Độ & Bài Học</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Hán tự, Pinyin, loại từ, nghĩa tiếng Việt, ví dụ</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <div class="sub-levels">
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk1')">HSK 1</button>
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk2')">HSK 2</button>
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk3')">HSK 3</button>
-            <button class="btn-level active" onclick="switchHskLevel(this, 'hsk4-top')">HSK 4 (Thượng)</button>
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk4-bottom')">HSK 4 (Hạ)</button>
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk5-top')">HSK 5 (Thượng)</button>
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk5-bottom')">HSK 5 (Hạ)</button>
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk6-top')">HSK 6 (Thượng)</button>
-            <button class="btn-level" onclick="switchHskLevel(this, 'hsk6-bottom')">HSK 6 (Hạ)</button>
+          <div class="sub-levels" id="hskLevelsScVocab">
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 1</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 2</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 3</button>
+            <button class="btn-level active" onclick="switchHskSub(this, 'vocab-sc')">HSK 4 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 4 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 5 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 5 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 6 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'vocab-sc')">HSK 6 (Hạ)</button>
           </div>
+          <div class="sub-lessons" id="lessonsScVocab"></div>
 
-          <div class="vocab-grid" id="vocabDisplayContainer">
-            <!-- Dữ liệu HSK 4 Thượng mẫu -->
+          <div class="vocab-grid" id="vocabDisplayContainerSc">
             <div class="vocab-card">
               <div class="hanzi-main zh-sc">坚持 <span class="pinyin-sub">jiānchí</span></div>
-              <span class="tag-type">Động từ</span>
+              <span class="tag-type">Động từ • HSK 4 Thượng • Bài 1</span>
               <div class="meaning-vn">Kiên trì, giữ vững</div>
               <div class="example-box">
                 <p class="zh-sc">只要坚持努力，就一定能成功。</p>
                 <small style="color: var(--text-muted);">Chỉ cần kiên trì nỗ lực nhất định sẽ thành công.</small>
-              </div>
-            </div>
-
-            <div class="vocab-card">
-              <div class="hanzi-main zh-sc">丰富 <span class="pinyin-sub">fēngfù</span></div>
-              <span class="tag-type">Tính từ / Động từ</span>
-              <div class="meaning-vn">Phong phú, dồi dào, làm giàu thêm</div>
-              <div class="example-box">
-                <p class="zh-sc">他的工作经验非常丰富。</p>
-                <small style="color: var(--text-muted);">Kinh nghiệm làm việc của anh ấy rất phong phú.</small>
-              </div>
-            </div>
-
-            <div class="vocab-card">
-              <div class="hanzi-main zh-sc">适合 <span class="pinyin-sub">shìhé</span></div>
-              <span class="tag-type">Động từ</span>
-              <div class="meaning-vn">Thích hợp, phù hợp</div>
-              <div class="example-box">
-                <p class="zh-sc">这件衣服非常适合你。</p>
-                <small style="color: var(--text-muted);">Bộ quần áo này rất hợp với bạn.</small>
               </div>
             </div>
           </div>
@@ -972,21 +409,27 @@
             <div class="folder-icon"><i class="fa-solid fa-diagram-project"></i></div>
             <div>
               <div class="folder-name">2. Cấu Trúc Ngữ Pháp Trọng Điểm</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Phân tích ngữ pháp, cấu trúc câu, mẹo tránh bẫy</small>
+              <small style="color: var(--text-muted); font-size: 12px;">Phân loại theo từng quyển và từng bài học</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
           <div class="sub-levels">
-            <button class="btn-level active">HSK 4 (Thượng)</button>
-            <button class="btn-level">HSK 4 (Hạ)</button>
-            <button class="btn-level">HSK 5</button>
-            <button class="btn-level">HSK 6</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 1</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 2</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 3</button>
+            <button class="btn-level active" onclick="switchHskSub(this, 'grammar-sc')">HSK 4 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 4 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 5 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 5 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 6 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'grammar-sc')">HSK 6 (Hạ)</button>
           </div>
+          <div class="sub-lessons" id="lessonsScGrammar"></div>
           <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-ocean);">
-            <h4 style="color: var(--deep-ocean); margin-bottom: 8px;">Cấu trúc: 即使……也…… (Cho dù... cũng...)</h4>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Biểu thị quan hệ nhượng bộ giả thiết, sự việc ở mệnh đề sau vẫn không thay đổi dù điều kiện ở vế trước xảy ra.</p>
+            <h4 style="color: var(--deep-ocean); margin-bottom: 8px;">Cấu trúc: 即使……也…… (Cho dù... cũng...) [Bài 1]</h4>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Biểu thị quan hệ nhượng bộ giả thiết, mệnh đề sau vẫn không thay đổi dù vế trước xảy ra.</p>
             <div class="example-box">
               <p class="zh-sc">即使遇到再大的困难，我们也不能放弃。</p>
               <small style="color: var(--text-muted);">Cho dù gặp phải khó khăn lớn đến đâu, chúng ta cũng không được bỏ cuộc.</small>
@@ -995,57 +438,94 @@
         </div>
       </div>
 
-      <!-- FOLDER 3: BÀI ĐỌC -->
+      <!-- FOLDER 3: BÀI ĐỌC & HỘI THOẠI -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-book-open"></i></div>
             <div>
-              <div class="folder-name">3. Bài Đọc Hiểu & Hội Thoại</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Văn bản từng bài học, luyện dịch nghĩa và phản xạ câu</small>
+              <div class="folder-name">3. Bài Đọc Hiểu & Hội Thoại Chuẩn HSK</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Trọn bộ 20 bài văn mẫu và đối thoại theo từng cấp</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <div style="background: white; padding: 24px; border-radius: 12px; line-height: 1.8;">
-            <h3 style="color: var(--deep-ocean); margin-bottom: 12px;">HSK 4 - Bài 1: Tình yêu đích thực (真挚的爱情)</h3>
-            <p class="zh-sc" style="font-size: 17px; margin-bottom: 16px;">
+          <div class="sub-levels">
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 1</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 2</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 3</button>
+            <button class="btn-level active" onclick="switchHskSub(this, 'reading-sc')">HSK 4 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 4 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 5 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 5 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 6 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'reading-sc')">HSK 6 (Hạ)</button>
+          </div>
+          <div class="sub-lessons" id="lessonsScReading"></div>
+          <div style="background: white; padding: 22px; border-radius: 12px; line-height: 1.8;">
+            <h4 style="color: var(--deep-ocean); margin-bottom: 10px;">HSK 4 Thượng - Bài 1: 真挚的爱情 (Tình yêu chân thành)</h4>
+            <p class="zh-sc" style="font-size: 16px; margin-bottom: 14px;">
               很多人都希望找到完美的爱情。但两个人在一起，不仅需要浪漫，更需要互相理解、尊重和包容。随着时间的推移，激情也许会慢慢变淡，但是彼此的陪伴才是最长久的幸福。
             </p>
-            <div style="background: #f1f5f9; padding: 14px; border-radius: 8px; font-size: 14px;">
-              <strong>Bản dịch:</strong> Nhiều người đều hy vọng tìm được một tình yêu hoàn mỹ. Nhưng khi hai người bên nhau, không chỉ cần lãng mạn mà còn cần sự thấu hiểu, tôn trọng và bao dung lẫn nhau. Cùng với thời gian trôi qua, niềm đam mê có lẽ sẽ nhạt dần, nhưng sự đồng hành cùng nhau mới là hạnh phúc bền lâu nhất.
+            <div style="background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 13px;">
+              <strong>Bản dịch:</strong> Nhiều người đều hy vọng tìm được tình yêu hoàn mỹ. Nhưng khi hai người bên nhau, không chỉ cần lãng mạn mà còn cần sự thấu hiểu, tôn trọng và bao dung lẫn nhau. Cùng với thời gian, niềm đam mê có lẽ sẽ nhạt dần, nhưng sự đồng hành cùng nhau mới là hạnh phúc bền lâu nhất.
             </div>
           </div>
         </div>
       </div>
 
-      <!-- FOLDER 4: BÀI TẬP RÈN LUYỆN -->
+      <!-- FOLDER 4: BÀI TẬP RÈN LUYỆN TỪNG BÀI -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-list-check"></i></div>
             <div>
-              <div class="folder-name">4. Bài Tập Rèn Luyện Từng Bài</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Củng cố tức thì kiến thức từ vựng và ngữ pháp vừa học</small>
+              <div class="folder-name">4. Bài Tập Rèn Luyện Theo Từng Bài</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Ôn tập củng cố sau mỗi bài học</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <p style="color: var(--text-muted); font-size: 14px;">Khung bài tập đã sẵn sàng. Bạn có thể gửi câu hỏi để tôi tích hợp hoặc sử dụng quyền Quản Trị để nhập thêm bất kỳ lúc nào.</p>
+          <div class="sub-levels">
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 1</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 2</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 3</button>
+            <button class="btn-level active" onclick="switchHskSub(this, 'practice-sc')">HSK 4 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 4 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 5 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 5 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 6 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'practice-sc')">HSK 6 (Hạ)</button>
+          </div>
+          <div class="sub-lessons" id="lessonsScPractice"></div>
+          <div id="scPracticeContainer">
+            <!-- Câu hỏi trắc nghiệm rèn luyện -->
+            <div class="quiz-card">
+              <div style="font-weight: 700; color: var(--deep-ocean); margin-bottom: 6px;">[HSK 4 Thượng - Bài 1] Chọn từ thích hợp điền vào chỗ trống:</div>
+              <p class="zh-sc" style="font-size: 16px;">两个人相处，最重要的是互相______与信任。</p>
+              <div class="quiz-options">
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Cần chọn từ biểu thị thấu hiểu!')">A. 复杂 (fùzá)</button>
+                <button class="opt-btn" onclick="checkAnswer(this, true, 'Chính xác! 理解 (lǐjiě) mang nghĩa thấu hiểu lẫn nhau.')">B. 理解 (lǐjiě)</button>
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai rồi! 批评 mang nghĩa phê bình.')">C. 批评 (pīpíng)</button>
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai rồi!')">D. 偶尔 (ǒu'ěr)</button>
+              </div>
+              <div class="quiz-explain"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-   <!-- ==================== TAB 2: TIẾNG PHỒN THỂ ==================== -->
+    <!-- ==================== TAB 2: TIẾNG PHỒN THỂ (10 CHỦ ĐỀ) ==================== -->
     <section id="tab-traditional" class="page-section">
       <div class="ocean-header-card">
         <div>
           <h2 class="ocean-title"><i class="fa-solid fa-feather-pointed"></i> Tiếng Trung Phồn Thể (繁體中文)</h2>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">Gồm Từ vựng, Bài đọc, Bài tập theo 10 chủ đề và Ngữ pháp Phồn Thể chuyên sâu.</p>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Từ vựng, Bài đọc và Bài tập phân tách thành 10 chủ đề lớn. Ngữ pháp mở rộng do Quản trị thêm vào.</p>
         </div>
-        <button class="btn-add-content" onclick="openNewTcVocabModal()">
+        <button class="btn-add-content" onclick="openNewVocabModal('tc')">
           <i class="fa-solid fa-plus"></i> Thêm từ vựng Phồn thể
         </button>
       </div>
@@ -1056,68 +536,47 @@
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-spell-check"></i></div>
             <div>
-              <div class="folder-name">1. Từ Vựng Theo 10 Chủ Đề (Phồn Thể)</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Từ vựng ứng dụng, phiên âm và ví dụ thực tế</small>
+              <div class="folder-name">1. Từ Vựng Phồn Thể Theo 10 Chủ Đề</div>
+              <small style="color: var(--text-muted); font-size: 12px;">Hán tự Phồn thể, Pinyin và ví dụ đời sống</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <div class="sub-levels">
-            <button class="btn-level active" onclick="switchTcTopic(this, 1)">1. Giao tiếp hàng ngày</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 2)">2. Ẩm thực & Nhà hàng</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 3)">3. Giao thông & Du lịch</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 4)">4. Mua sắm & Tiêu dùng</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 5)">5. Công sở & Thương mại</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 6)">6. Gia đình & Bạn bè</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 7)">7. Cảm xúc & Tâm trạng</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 8)">8. Giải trí & Đời sống</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 9)">9. Thời tiết & Khí hậu</button>
-            <button class="btn-level" onclick="switchTcTopic(this, 10)">10. Lễ hội & Phong tục</button>
-          </div>
-
-          <div class="vocab-grid" id="tcVocabDisplayContainer">
+          <div class="sub-levels" id="tcTopicsVocab"></div>
+          <div class="vocab-grid" id="vocabDisplayContainerTc">
             <div class="vocab-card">
               <div class="hanzi-main zh-tc">認識 <span class="pinyin-sub">rènshì</span></div>
               <span class="tag-type">Động từ • Chủ đề 1</span>
-              <div class="meaning-vn">Quen biết, nhận biết</div>
+              <div class="meaning-vn">Quen biết, làm quen</div>
               <div class="example-box">
-                <p class="zh-tc">很高興認識你！</p>
-                <small style="color: var(--text-muted);">Rất vui được làm quen với bạn!</small>
-              </div>
-            </div>
-            <div class="vocab-card">
-              <div class="hanzi-main zh-tc">謝謝 <span class="pinyin-sub">xièxie</span></div>
-              <span class="tag-type">Thán từ • Chủ đề 1</span>
-              <div class="meaning-vn">Cảm ơn</div>
-              <div class="example-box">
-                <p class="zh-tc">非常謝謝你的幫忙。</p>
-                <small style="color: var(--text-muted);">Vô cùng cảm ơn sự giúp đỡ của bạn.</small>
+                <p class="zh-tc">很高興能認識你！</p>
+                <small style="color: var(--text-muted);">Rất vui được quen biết bạn!</small>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- FOLDER 2: NGỮ PHÁP PHỒN THỂ (DO QUẢN TRỊ VIÊN THÊM VÀO, KHÔNG CHIA CHỦ ĐỀ) -->
+      <!-- FOLDER 2: NGỮ PHÁP PHỒN THỂ (DO QUẢN TRỊ VIÊN THÊM TỰ DO) -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-diagram-project"></i></div>
             <div>
               <div class="folder-name">2. Ngữ Pháp Phồn Thể Chuyên Sâu</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Các điểm ngữ pháp do quản trị viên cập nhật</small>
+              <small style="color: var(--text-muted); font-size: 12px;">Các điểm ngữ pháp đặc thù do Quản trị viên cập nhật</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body" id="tcGrammarContainer">
-          <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-ocean); margin-bottom: 12px;">
+          <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-ocean);">
             <h4 style="color: var(--deep-ocean); margin-bottom: 8px;">Cấu trúc: 一邊……一邊…… (Vừa... vừa...)</h4>
-            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Diễn tả hai hành động diễn ra đồng thời cùng lúc.</p>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Diễn tả hai hành động diễn ra cùng một lúc.</p>
             <div class="example-box">
-              <p class="zh-tc">他喜歡一邊喝茶，一邊看書。</p>
-              <small style="color: var(--text-muted);">Anh ấy thích vừa uống trà vừa đọc sách.</small>
+              <p class="zh-tc">他喜歡一邊喝茶，一邊閱讀報紙。</p>
+              <small style="color: var(--text-muted);">Anh ấy thích vừa uống trà vừa đọc báo.</small>
             </div>
           </div>
         </div>
@@ -1130,30 +589,21 @@
             <div class="folder-icon"><i class="fa-solid fa-book-open"></i></div>
             <div>
               <div class="folder-name">3. Bài Đọc & Hội Thoại Theo 10 Chủ Đề</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Bài đọc hiểu ngữ cảnh văn phong phồn thể</small>
+              <small style="color: var(--text-muted); font-size: 12px;">Đoạn văn và đàm thoại khẩu ngữ phồn thể</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <div class="sub-levels">
-            <button class="btn-level active">Chủ đề 1</button>
-            <button class="btn-level">Chủ đề 2</button>
-            <button class="btn-level">Chủ đề 3</button>
-            <button class="btn-level">Chủ đề 4</button>
-            <button class="btn-level">Chủ đề 5</button>
-            <button class="btn-level">Chủ đề 6</button>
-            <button class="btn-level">Chủ đề 7</button>
-            <button class="btn-level">Chủ đề 8</button>
-            <button class="btn-level">Chủ đề 9</button>
-            <button class="btn-level">Chủ đề 10</button>
-          </div>
-          <div style="background: white; padding: 20px; border-radius: 12px; line-height: 1.8;">
-            <h4 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 8px;">主題一：自我介紹與問候 (Giới thiệu bản thân & Chào hỏi)</h4>
-            <p class="zh-tc" style="font-size: 16px; margin-bottom: 12px;">
-              各位朋友大家好！我很高興來到這裡學習漢語。希望在未來的日子裡，我們能夠互相幫助，一起進步。
+          <div class="sub-levels" id="tcTopicsReading"></div>
+          <div style="background: white; padding: 22px; border-radius: 12px; line-height: 1.8;">
+            <h4 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 10px;">主題一：日常社交問候 (Chào hỏi xã giao thường nhật)</h4>
+            <p class="zh-tc" style="font-size: 16px; margin-bottom: 14px;">
+              林先生，早安！好久不見了，您最近工作忙嗎？有空的話，我們一起去喝杯咖啡吧。
             </p>
-            <small style="color: var(--text-muted);">Chào tất cả các bạn! Tôi rất vui được đến đây học tiếng Hán. Hy vọng trong những ngày sắp tới chúng ta có thể giúp đỡ lẫn nhau và cùng nhau tiến bộ.</small>
+            <div style="background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 13px;">
+              <strong>Bản dịch:</strong> Chào buổi sáng anh Lâm! Lâu rồi không gặp, dạo này công việc của anh bận không? Nếu có thời gian, chúng ta cùng đi uống tách cà phê nhé.
+            </div>
           </div>
         </div>
       </div>
@@ -1165,49 +615,41 @@
             <div class="folder-icon"><i class="fa-solid fa-list-check"></i></div>
             <div>
               <div class="folder-name">4. Bài Tập Rèn Luyện Theo 10 Chủ Đề</div>
-              <small style="color: var(--text-muted); font-size: 12px;">Luyện tập củng cố theo từng chủ đề bài học</small>
+              <small style="color: var(--text-muted); font-size: 12px;">Trắc nghiệm tương tác cho từng chủ đề</small>
             </div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <div class="sub-levels">
-            <button class="btn-level active">Chủ đề 1</button>
-            <button class="btn-level">Chủ đề 2</button>
-            <button class="btn-level">Chủ đề 3</button>
-            <button class="btn-level">Chủ đề 4</button>
-            <button class="btn-level">Chủ đề 5</button>
-            <button class="btn-level">Chủ đề 6</button>
-            <button class="btn-level">Chủ đề 7</button>
-            <button class="btn-level">Chủ đề 8</button>
-            <button class="btn-level">Chủ đề 9</button>
-            <button class="btn-level">Chủ đề 10</button>
-          </div>
-          <div style="background: white; padding: 18px; border-radius: 12px;">
-            <div style="font-weight: 700; color: var(--deep-ocean); margin-bottom: 8px;">
-              Câu 1 (Chủ đề 1): Chọn chữ đúng để hoàn thành câu:
+          <div class="sub-levels" id="tcTopicsPractice"></div>
+          <div class="quiz-card">
+            <div style="font-weight: 700; color: var(--deep-ocean); margin-bottom: 6px;">[Chủ đề 1: Giao tiếp] Chọn chữ phồn thể thích hợp:</div>
+            <p class="zh-tc" style="font-size: 16px;">請問這家餐廳的招牌菜是______？</p>
+            <div class="quiz-options">
+              <button class="opt-btn" onclick="checkAnswer(this, true, 'Đúng rồi! 什麼 nghĩa là cái gì.')">A. 什麼 (shénme)</button>
+              <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai rồi!')">B. 哪裡 (nǎlǐ)</button>
+              <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai rồi!')">C. 誰 (shéi)</button>
+              <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai rồi!')">D. 怎麼 (zěnme)</button>
             </div>
-            <p class="zh-tc" style="font-size: 16px; margin-bottom: 12px;">
-              請問你叫什麼______？ (A. 名字  B. 明天  C. 朋友)
-            </p>
-            <button class="btn-ocean" style="color: var(--primary-ocean); background: #e0f2fe; border: none; font-size: 12px;" onclick="alert('Đáp án đúng là: A. 名字 (míngzì - tên gọi)')">
-              Xem đáp án
-            </button>
+            <div class="quiz-explain"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== TAB 3: BÀI TẬP & ĐỀ THI ==================== -->
+    <!-- ==================== TAB 3: KHO BÀI TẬP & ĐỀ THI ==================== -->
     <section id="tab-exercises" class="page-section">
       <div class="ocean-header-card">
         <div>
-          <h2 class="ocean-title"><i class="fa-solid fa-pencil"></i> Kho Bài Tập & Đề Thi Phân Loại</h2>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 4px;">Tách biệt rõ ràng bài tập hàng ngày và đề thi của cả Giản thể & Phồn thể.</p>
+          <h2 class="ocean-title"><i class="fa-solid fa-pencil"></i> Kho Bài Tập & Đề Thi Toàn Diện</h2>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Có file Audio nghe trực tiếp và trắc nghiệm Multiple Choice chấm điểm tự động.</p>
         </div>
+        <button class="btn-add-content" onclick="openNewQuizModal()">
+          <i class="fa-solid fa-plus"></i> Thêm Bài Tập / Đề Thi (Có Audio)
+        </button>
       </div>
 
-      <!-- FOLDER 1: BÀI TẬP HÀNG NGÀY GIẢN THỂ -->
+      <!-- FOLDER 1: BÀI TẬP HÀNG NGÀY GIẢN THỂ (HSK 1 - 6 & 20 BÀI) -->
       <div class="folder-card open">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -1217,21 +659,38 @@
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <div style="background: white; padding: 18px; border-radius: 12px; margin-bottom: 12px;">
-            <div style="font-weight: 700; color: var(--deep-ocean); margin-bottom: 8px;">
-              Câu 1: Chọn từ thích hợp điền vào chỗ trống:
+          <div class="sub-levels">
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 1</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 2</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 3</button>
+            <button class="btn-level active" onclick="switchHskSub(this, 'ex-sc')">HSK 4 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 4 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 5 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 5 (Hạ)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 6 (Thượng)</button>
+            <button class="btn-level" onclick="switchHskSub(this, 'ex-sc')">HSK 6 (Hạ)</button>
+          </div>
+          <div class="sub-lessons" id="lessonsExSc"></div>
+
+          <div id="exerciseListContainerSc">
+            <div class="quiz-card">
+              <span class="tag-type">HSK 4 Thượng • Bài 1 • Có Audio Nghe</span>
+              <p class="zh-sc" style="font-size: 16px; font-weight: 600; margin-top: 6px;">Nghe đoạn âm thanh sau và chọn đáp án chính xác nhất:</p>
+              <!-- Demo Audio Link -->
+              <audio controls class="quiz-audio-player" src="https://www.w3schools.com/html/horse.mp3"></audio>
+              <div class="quiz-options">
+                <button class="opt-btn" onclick="checkAnswer(this, true, 'Chính xác! Đáp án đúng dựa trên đoạn hội thoại.')">A. 他们打算明天去买东西</button>
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai rồi! Hãy chú ý mốc thời gian.')">B. 他们正在火车站买票</button>
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Chưa chính xác.')">C. 男的今天不想出门</button>
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Không có thông tin trong bài nghe.')">D. 他们在饭店吃饭</button>
+              </div>
+              <div class="quiz-explain"></div>
             </div>
-            <p class="zh-sc" style="font-size: 16px; margin-bottom: 12px;">
-              无论遇到多大的困难，你都应该 ______ 下去。(A. 坚持  B. 保护  C. 接受)
-            </p>
-            <button class="btn-ocean" style="color: var(--primary-ocean); background: #e0f2fe; border: none; font-size: 12px;" onclick="alert('Đáp án: A. 坚持 (jiānchí)')">
-              Xem đáp án & giải thích
-            </button>
           </div>
         </div>
       </div>
 
-      <!-- FOLDER 2: BÀI TẬP HÀNG NGÀY PHỒN THỂ -->
+      <!-- FOLDER 2: BÀI TẬP HÀNG NGÀY PHỒN THỂ (10 CHỦ ĐỀ) -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
@@ -1241,26 +700,39 @@
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <p style="color: var(--text-muted); font-size: 14px;">Nơi lưu trữ các bài tập tiếng Phồn thể do quản trị viên đưa lên mỗi ngày.</p>
+          <div class="sub-levels" id="tcTopicsExDaily"></div>
+          <div id="exerciseListContainerTc">
+            <div class="quiz-card">
+              <span class="tag-type">Phồn Thể • Chủ đề 1: Giao Tiếp</span>
+              <p class="zh-tc" style="font-size: 16px; font-weight: 600; margin-top: 6px;">選出最合適的回答 (Chọn câu trả lời phù hợp nhất):</p>
+              <p class="zh-tc" style="margin: 8px 0; color: #475569;">「祝你生日快樂，事事順心！」</p>
+              <div class="quiz-options">
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Không phù hợp ngữ cảnh.')">A. 不客氣，再見！</button>
+                <button class="opt-btn" onclick="checkAnswer(this, true, 'Chính xác! Khi được chúc mừng sinh nhật thì cảm ơn.')">B. 謝謝你的祝福！</button>
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai ngữ cảnh.')">C. 沒關係，我不要。</button>
+                <button class="opt-btn" onclick="checkAnswer(this, false, 'Sai ngữ cảnh.')">D. 請問在哪裡？</button>
+              </div>
+              <div class="quiz-explain"></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- FOLDER 3: ĐỀ THI CẢ QUYỂN - PHÂN TÁCH GIẢN & PHỒN -->
+      <!-- FOLDER 3: KHO ĐỀ THI TRỌN BỘ CẢ QUYỂN (PHÂN TÁCH GIẢN & PHỒN) -->
       <div class="folder-card">
         <div class="folder-header" onclick="toggleFolder(this)">
           <div class="folder-title-left">
             <div class="folder-icon"><i class="fa-solid fa-award"></i></div>
-            <div class="folder-name">3. Kho Đề Thi Trọn Bộ Cả Quyển (Tách Giản & Phồn)</div>
+            <div class="folder-name">3. Kho Đề Thi Trọn Cả Quyển (Tách Giản & Phồn)</div>
           </div>
           <i class="fa-solid fa-chevron-down folder-chevron"></i>
         </div>
         <div class="folder-body">
-          <!-- Phân nhánh Giản Thể vs Phồn Thể -->
           <div style="margin-bottom: 16px;">
-            <strong style="color: var(--deep-ocean); font-size: 14px;">Chọn hệ chữ đề thi:</strong>
+            <strong style="color: var(--deep-ocean); font-size: 14px;">Chọn hệ đề thi:</strong>
             <div class="sub-levels" style="margin-top: 8px;">
               <button class="btn-level active" onclick="switchExamType(this, 'exam-sc')">Đề Thi Giản Thể (HSK 1 - 6)</button>
-              <button class="btn-level" onclick="switchExamType(this, 'exam-tc')">Đề Thi Phồn Thể (TOCFL / Cả quyển)</button>
+              <button class="btn-level" onclick="switchExamType(this, 'exam-tc')">Đề Thi Phồn Thể (TOCFL)</button>
             </div>
           </div>
 
@@ -1278,9 +750,11 @@
               <button class="btn-level">Quyển 6 (Hạ)</button>
             </div>
             <div style="background: white; padding: 24px; border-radius: 12px; text-align: center; border: 1px dashed var(--border-wave);">
-              <h4 style="color: var(--deep-ocean); margin-bottom: 6px;">Đề Thi HSK 4 (Thượng) - Bản Chuẩn Giản Thể</h4>
-              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Thời gian: 105 phút | Gồm: Nghe - Đọc - Viết</p>
-              <button class="btn-ocean" style="background: var(--primary-ocean); margin: 0 auto;" onclick="alert('Đề thi sẵn sàng khi bạn cung cấp nội dung!')">Bắt đầu làm bài</button>
+              <h4 style="color: var(--deep-ocean); margin-bottom: 6px;">Đề Thi Trọn Gói HSK 4 (Thượng)</h4>
+              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Thời gian: 105 phút | Gồm: Nghe - Đọc - Viết | Chấm điểm tự động</p>
+              <button class="btn-ocean" style="background: var(--primary-ocean); margin: 0 auto;" onclick="alert('Đề thi mô phỏng đang sẵn sàng khi bạn cung cấp nội dung!')">
+                <i class="fa-solid fa-play"></i> Bắt đầu thi thử
+              </button>
             </div>
           </div>
 
@@ -1295,21 +769,24 @@
               <button class="btn-level">Cấp 6</button>
             </div>
             <div style="background: white; padding: 24px; border-radius: 12px; text-align: center; border: 1px dashed var(--border-wave);">
-              <h4 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">模擬試題 - 繁體中文全卷測驗</h4>
+              <h4 class="zh-tc" style="color: var(--deep-ocean); margin-bottom: 6px;">華語文能力測驗 (TOCFL) 模擬試卷</h4>
               <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">Bộ đề kiểm tra toàn diện tiếng Phồn thể</p>
-              <button class="btn-ocean" style="background: var(--primary-ocean); margin: 0 auto;" onclick="alert('Đang chuẩn bị đề thi phồn thể!')">開始測驗 (Bắt đầu)</button>
+              <button class="btn-ocean" style="background: var(--primary-ocean); margin: 0 auto;" onclick="alert('Đang chuẩn bị đề thi phồn thể!')">
+                <i class="fa-solid fa-play"></i> 開始測驗 (Bắt đầu)
+              </button>
             </div>
           </div>
         </div>
       </div>
     </section>
+  </main>
 
-  <!-- ==================== MODAL: ĐĂNG NHẬP QUẢN TRỊ ==================== -->
+  <!-- ==================== MODAL 1: ĐĂNG NHẬP QUẢN TRỊ ==================== -->
   <div class="modal-overlay" id="adminModal">
     <div class="modal-content">
       <div class="modal-head">
         <h3><i class="fa-solid fa-lock"></i> Xác Thực Quản Trị Viên</h3>
-        <span class="modal-close" onclick="closeAdminModal()">&times;</span>
+        <span class="modal-close" style="cursor: pointer;" onclick="closeModal('adminModal')">&times;</span>
       </div>
       <div class="modal-body">
         <div class="form-group">
@@ -1317,38 +794,51 @@
           <input type="password" id="adminPasswordInput" placeholder="Nhập mật khẩu..." onkeypress="if(event.key==='Enter') executeAdminLogin()">
         </div>
         <button class="btn-ocean" style="background: var(--primary-ocean); justify-content: center; width: 100%; padding: 12px;" onclick="executeAdminLogin()">
-          Đăng Nhập Quản Trị
+          Đăng Nhập
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ==================== MODAL: THÊM TỪ VỰNG ==================== -->
+  <!-- ==================== MODAL 2: HỘM THƯ QUẢN TRỊ (XEM TIN KHÁCH) ==================== -->
+  <div class="modal-overlay" id="inboxModal">
+    <div class="modal-content" style="max-width: 600px;">
+      <div class="modal-head">
+        <h3><i class="fa-solid fa-inbox"></i> Hòm Thư Tin Nhắn Khách Hàng</h3>
+        <span class="modal-close" style="cursor: pointer;" onclick="closeModal('inboxModal')">&times;</span>
+      </div>
+      <div class="modal-body" id="inboxMessagesList" style="max-height: 450px;">
+        <!-- Tin nhắn khách hiển thị ở đây -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 3: THÊM TỪ VỰNG ==================== -->
   <div class="modal-overlay" id="newVocabModal">
     <div class="modal-content">
       <div class="modal-head">
         <h3><i class="fa-solid fa-plus-circle"></i> Thêm Từ Vựng Mới</h3>
-        <span class="modal-close" onclick="closeNewVocabModal()">&times;</span>
+        <span class="modal-close" style="cursor: pointer;" onclick="closeModal('newVocabModal')">&times;</span>
       </div>
       <div class="modal-body">
+        <input type="hidden" id="vocabTypeSystem" value="sc">
         <div class="form-group">
-          <label>Chữ Hán (Giản thể / Phồn thể)</label>
-          <input type="text" id="inputHanzi" placeholder="Ví dụ: 成功">
+          <label>Chữ Hán</label>
+          <input type="text" id="inputHanzi" placeholder="Ví dụ: 成功 hoặc 繁體">
         </div>
         <div class="form-group">
           <label>Phiên âm Pinyin</label>
           <input type="text" id="inputPinyin" placeholder="Ví dụ: chénggōng">
         </div>
-        <div class="form-group">
-          <label>Cấp bậc</label>
-          <select id="inputLevel">
-            <option value="hsk4-top">HSK 4 (Thượng)</option>
-            <option value="hsk4-bottom">HSK 4 (Hạ)</option>
-            <option value="hsk5-top">HSK 5 (Thượng)</option>
-            <option value="hsk5-bottom">HSK 5 (Hạ)</option>
-            <option value="hsk6-top">HSK 6 (Thượng)</option>
-            <option value="hsk6-bottom">HSK 6 (Hạ)</option>
-          </select>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phân loại bài / Cấp</label>
+            <input type="text" id="inputLevelTag" placeholder="Ví dụ: HSK 4 Thượng - Bài 2">
+          </div>
+          <div class="form-group">
+            <label>Loại từ</label>
+            <input type="text" id="inputTypeTag" placeholder="Ví dụ: Động từ, Danh từ">
+          </div>
         </div>
         <div class="form-group">
           <label>Nghĩa tiếng Việt</label>
@@ -1356,16 +846,81 @@
         </div>
         <div class="form-group">
           <label>Câu ví dụ thực tế</label>
-          <textarea id="inputExample" rows="2" placeholder="Ví dụ: 努力是成功之母。"></textarea>
+          <textarea id="inputExample" rows="2" placeholder="Ví dụ câu ứng dụng..."></textarea>
         </div>
         <button class="btn-ocean" style="background: var(--primary-ocean); justify-content: center; width: 100%; padding: 12px;" onclick="saveNewVocab()">
-          Lưu Vào Danh Sách
+          Lưu Vào Web
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ==================== CHAT HỖ TRỢ ==================== -->
+  <!-- ==================== MODAL 4: THÊM BÀI TẬP & AUDIO ==================== -->
+  <div class="modal-overlay" id="newQuizModal">
+    <div class="modal-content" style="max-width: 550px;">
+      <div class="modal-head">
+        <h3><i class="fa-solid fa-file-circle-plus"></i> Thêm Bài Tập Trắc Nghiệm Có Audio</h3>
+        <span class="modal-close" style="cursor: pointer;" onclick="closeModal('newQuizModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Nội dung câu hỏi / Tiêu đề bài</label>
+          <input type="text" id="quizQuestion" placeholder="Ví dụ: Nghe đoạn hội thoại và chọn đáp án:">
+        </div>
+        <div class="form-group">
+          <label>Link Audio (Tùy chọn - file mp3 trực tiếp)</label>
+          <input type="text" id="quizAudio" placeholder="https://example.com/audio.mp3">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phương án A</label>
+            <input type="text" id="optA" placeholder="Đáp án A">
+          </div>
+          <div class="form-group">
+            <label>Phương án B</label>
+            <input type="text" id="optB" placeholder="Đáp án B">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phương án C</label>
+            <input type="text" id="optC" placeholder="Đáp án C">
+          </div>
+          <div class="form-group">
+            <label>Phương án D</label>
+            <input type="text" id="optD" placeholder="Đáp án D">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Đáp án đúng</label>
+            <select id="quizCorrect">
+              <option value="A">Phương án A</option>
+              <option value="B">Phương án B</option>
+              <option value="C">Phương án C</option>
+              <option value="D">Phương án D</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Mục lưu bài</label>
+            <select id="quizTargetSection">
+              <option value="sc">Bài tập Giản Thể</option>
+              <option value="tc">Bài tập Phồn Thể</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Giải thích chi tiết (khi chọn đáp án)</label>
+          <input type="text" id="quizExplainText" placeholder="Giải thích vì sao chọn đáp án này...">
+        </div>
+        <button class="btn-ocean" style="background: var(--primary-ocean); justify-content: center; width: 100%; padding: 12px;" onclick="saveNewQuiz()">
+          Lưu Câu Hỏi Vào Bài Tập
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CHAT WIDGET & ĐĂNG NHẬP TÊN KHÁCH ==================== -->
   <button class="chat-bubble-btn" onclick="toggleChatWidget()" title="Trợ giúp & Hỗ trợ">
     <i class="fa-solid fa-comments"></i>
   </button>
@@ -1374,294 +929,374 @@
     <div class="chat-header">
       <div style="display: flex; align-items: center; gap: 8px;">
         <i class="fa-solid fa-headset"></i>
-        <strong style="font-size: 14px;">Trợ Lý Học Tiếng Trung</strong>
+        <strong style="font-size: 13px;">Hỗ Trợ & Trao Đổi Với Quản Trị</strong>
       </div>
       <span style="cursor: pointer; font-size: 18px;" onclick="toggleChatWidget()">&times;</span>
     </div>
+
+    <!-- Thanh xác nhận tên khách -->
+    <div class="chat-guest-bar">
+      <span>Tên bạn:</span>
+      <input type="text" id="guestNameInput" placeholder="Nhập họ tên để nhắn tin..." onchange="saveGuestName()">
+    </div>
+
     <div class="chat-messages" id="chatMessages">
       <div class="msg bot">
-        Chào bạn! Mình có thể hỗ trợ gì cho bạn trong quá trình học HSK hoặc tiếng Phồn Thể hôm nay?
+        Chào bạn! Vui lòng nhập tên của bạn ở trên để quản trị viên có thể nhận diện và hỗ trợ bạn tốt nhất nhé.
       </div>
     </div>
+
     <div class="chat-input-bar">
-      <input type="text" id="chatInputField" placeholder="Nhập câu hỏi..." onkeypress="if(event.key==='Enter') sendChatMessage()">
+      <input type="text" id="chatInputField" placeholder="Nhập nội dung thắc mắc..." onkeypress="if(event.key==='Enter') sendChatMessage()">
       <button onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
     </div>
   </div>
 
   <footer>
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <p style="font-weight: 700; letter-spacing: 1px;">汉语 • HÀNYǓ LEARNING HUB</p>
-      <p>Nền Tảng Tự Học Tiếng Trung Toàn Diện Giản Thể & Phồn Thể</p>
+    <div style="max-width: 1240px; margin: 0 auto;">
+    <p style="font-weight: 700; letter-spacing: 1px;">🪼 水母 • SHUǏMǓ LEARNING PLATFORM</p>
+      <p>Hệ Thống Tự Học Toàn Diện Tiếng Trung Giản Thể & Phồn Thể</p>
     </div>
   </footer>
 
   <script>
-    /* ========================================================
-       1. HIỆU ỨNG BLING-BLING KHI CLICK / CHẠM
-       ======================================================== */
+    /* 1. HIỆU ỨNG BLING-BLING KHI CLICK / CHẠM */
     const sparkleIcons = ['✦', '✧', '★', '✨', '💧', '•'];
     const sparkleColors = ['#00b4d8', '#0077b6', '#90e0ef', '#caf0f8', '#ffffff', '#ffd166'];
-
     function createSparkle(x, y) {
-      const count = 7;
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < 7; i++) {
         const star = document.createElement('div');
         star.className = 'sparkle-star';
         star.innerText = sparkleIcons[Math.floor(Math.random() * sparkleIcons.length)];
         star.style.left = x + 'px';
         star.style.top = y + 'px';
         star.style.color = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
-
-        const angle = (Math.PI * 2 / count) * i + (Math.random() * 0.4 - 0.2);
-        const distance1 = 30 + Math.random() * 25;
-        const distance2 = 50 + Math.random() * 40;
-
-        star.style.setProperty('--tx', Math.cos(angle) * distance1 + 'px');
-        star.style.setProperty('--ty', Math.sin(angle) * distance1 + 'px');
-        star.style.setProperty('--tx-end', Math.cos(angle) * distance2 + 'px');
-        star.style.setProperty('--ty-end', Math.sin(angle) * distance2 + 'px');
-
+        const angle = (Math.PI * 2 / 7) * i + (Math.random() * 0.4 - 0.2);
+        star.style.setProperty('--tx', Math.cos(angle) * (30 + Math.random() * 25) + 'px');
+        star.style.setProperty('--ty', Math.sin(angle) * (30 + Math.random() * 25) + 'px');
+        star.style.setProperty('--tx-end', Math.cos(angle) * (50 + Math.random() * 40) + 'px');
+        star.style.setProperty('--ty-end', Math.sin(angle) * (50 + Math.random() * 40) + 'px');
         document.body.appendChild(star);
         setTimeout(() => star.remove(), 750);
       }
     }
+    document.addEventListener('click', (e) => createSparkle(e.clientX, e.clientY));
 
-    document.addEventListener('click', (e) => {
-      createSparkle(e.clientX, e.clientY);
+    /* 2. BỌT NƯỚC LƠ LỬNG */
+    const bubblesContainer = document.getElementById('bubblesContainer');
+    for (let i = 0; i < 16; i++) {
+      const b = document.createElement('div');
+      b.className = 'bubble';
+      const size = Math.random() * 20 + 8;
+      b.style.width = size + 'px'; b.style.height = size + 'px';
+      b.style.left = Math.random() * 100 + '%';
+      b.style.animationDuration = (Math.random() * 8 + 8) + 's';
+      b.style.animationDelay = (Math.random() * 10) + 's';
+      b.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+      bubblesContainer.appendChild(b);
+    }
+
+    /* 3. TẠO TỰ ĐỘNG 20 BÀI CON CHO HSK & 10 CHỦ ĐỀ PHỒN THỂ */
+    const lessonContainers = ['lessonsScVocab', 'lessonsScGrammar', 'lessonsScReading', 'lessonsScPractice', 'lessonsExSc'];
+    lessonContainers.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      for (let i = 1; i <= 20; i++) {
+        const btn = document.createElement('button');
+        btn.className = `btn-lesson ${i === 1 ? 'active' : ''}`;
+        btn.innerText = `Bài ${i}`;
+        btn.onclick = function() {
+          el.querySelectorAll('.btn-lesson').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        };
+        el.appendChild(btn);
+      }
     });
 
-    document.addEventListener('touchstart', (e) => {
-      if (e.touches && e.touches[0]) {
-        createSparkle(e.touches[0].clientX, e.touches[0].clientY);
-      }
-    }, { passive: true });
+    const traditionalTopics = [
+      "1. Giao tiếp hàng ngày", "2. Ẩm thực & Nhà hàng", "3. Giao thông & Du lịch",
+      "4. Mua sắm & Tiêu dùng", "5. Công sở & Thương mại", "6. Gia đình & Bạn bè",
+      "7. Cảm xúc & Tâm trạng", "8. Giải trí & Đời sống", "9. Thời tiết & Khí hậu", "10. Lễ hội & Phong tục"
+    ];
+    const tcContainers = ['tcTopicsVocab', 'tcTopicsReading', 'tcTopicsPractice', 'tcTopicsExDaily'];
+    tcContainers.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      traditionalTopics.forEach((t, idx) => {
+        const btn = document.createElement('button');
+        btn.className = `btn-level ${idx === 0 ? 'active' : ''}`;
+        btn.innerText = t;
+        btn.onclick = function() {
+          el.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        };
+        el.appendChild(btn);
+      });
+    });
 
-    /* ========================================================
-       2. TẠO BỌT BIỂN LƠ LỬNG (AMBIENT BUBBLES)
-       ======================================================== */
-    const bubblesContainer = document.getElementById('bubblesContainer');
-    function generateBubbles() {
-      for (let i = 0; i < 18; i++) {
-        const b = document.createElement('div');
-        b.className = 'bubble';
-        const size = Math.random() * 20 + 8;
-        b.style.width = size + 'px';
-        b.style.height = size + 'px';
-        b.style.left = Math.random() * 100 + '%';
-        b.style.animationDuration = (Math.random() * 8 + 8) + 's';
-        b.style.animationDelay = (Math.random() * 10) + 's';
-        b.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
-        bubblesContainer.appendChild(b);
+    /* 4. ĐIỀU HƯỚNG TAB & MỞ GẬP THƯ MỤC */
+    function switchMainTab(tabId, btn) {
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+    function toggleFolder(header) {
+      header.parentElement.classList.toggle('open');
+    }
+    function switchHskSub(btn, group) {
+      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    function switchExamType(btn, typeId) {
+      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('exam-sc-block').style.display = typeId === 'exam-sc' ? 'block' : 'none';
+      document.getElementById('exam-tc-block').style.display = typeId === 'exam-tc' ? 'block' : 'none';
+    }
+
+    /* 5. KIỂM TRA ĐÁP ÁN TRẮC NGHIỆM */
+    function checkAnswer(btn, isCorrect, explainText) {
+      const parent = btn.parentElement;
+      const card = parent.parentElement;
+      const explainBox = card.querySelector('.quiz-explain');
+
+      parent.querySelectorAll('.opt-btn').forEach(b => {
+        b.classList.remove('correct', 'wrong');
+        b.disabled = true;
+      });
+
+      if (isCorrect) {
+        btn.classList.add('correct');
+      } else {
+        btn.classList.add('wrong');
+      }
+
+      if (explainBox) {
+        explainBox.style.display = 'block';
+        explainBox.innerHTML = `<strong>${isCorrect ? '✅ Đúng:' : '❌ Giải thích:'}</strong> ${explainText}`;
       }
     }
-    generateBubbles();
 
-    /* ========================================================
-       3. HỆ THỐNG XÁC THỰC QUẢN TRỊ (XỬ LÝ TRỰC TIẾP, SIÊU NHANH)
-       ======================================================== */
-    // Mật khẩu chính thức: phuc77471
-    function checkPass(input) {
-      return btoa(input) === "cGh1Yzc3NDcx";
-    }
-
+    /* 6. QUẢN TRỊ VIÊN & HÒM THƯ TIN NHẮN KHÁCH */
     function openAdminModal() {
-      const isAuth = localStorage.getItem('isHanyuAdmin');
-      if (isAuth === 'true') {
+      if (localStorage.getItem('isHanyuAdmin') === 'true') {
         alert('Bạn hiện đang ở quyền Quản Trị Viên!');
         return;
       }
-      document.getElementById('adminModal').classList.add('active');
-      document.getElementById('adminPasswordInput').value = '';
-      setTimeout(() => document.getElementById('adminPasswordInput').focus(), 100);
+      openModal('adminModal');
     }
-
-    function closeAdminModal() {
-      document.getElementById('adminModal').classList.remove('active');
-    }
-
     function executeAdminLogin() {
       const pass = document.getElementById('adminPasswordInput').value.trim();
-      if (!pass) {
-        alert('Vui lòng nhập mật khẩu quản trị!');
-        return;
-      }
-
-      if (checkPass(pass)) {
+      if (btoa(pass) === "cGh1Yzc3NDcx") {
         localStorage.setItem('isHanyuAdmin', 'true');
         applyAdminState(true);
-        closeAdminModal();
+        closeModal('adminModal');
         alert('Đăng nhập Quản Trị thành công!');
       } else {
         alert('Mật khẩu không chính xác!');
-        document.getElementById('adminPasswordInput').value = '';
       }
     }
-
     function logoutAdmin() {
       localStorage.removeItem('isHanyuAdmin');
       applyAdminState(false);
-      alert('Đã đăng xuất khỏi quyền Quản trị!');
+      alert('Đã đăng xuất quyền Quản trị!');
     }
-
     function applyAdminState(isAdmin) {
       if (isAdmin) {
         document.body.classList.add('is-admin');
         document.getElementById('adminBar').classList.add('active');
+        document.getElementById('inboxBtn').style.display = 'inline-flex';
         document.getElementById('adminBtnText').innerText = 'Đã Quản Trị';
+        updateInboxBadge();
       } else {
         document.body.classList.remove('is-admin');
         document.getElementById('adminBar').classList.remove('active');
+        document.getElementById('inboxBtn').style.display = 'none';
         document.getElementById('adminBtnText').innerText = 'Quản Trị';
       }
     }
+    if (localStorage.getItem('isHanyuAdmin') === 'true') applyAdminState(true);
 
-    if (localStorage.getItem('isHanyuAdmin') === 'true') {
-      applyAdminState(true);
+    /* Quản lý Hộp thư tin nhắn */
+    function getStoredMessages() {
+      return JSON.parse(localStorage.getItem('hanyu_guest_msgs') || '[]');
     }
-
-    /* ========================================================
-       4. ĐIỀU HƯỚNG TAB & MỞ GẬP THƯ MỤC
-       ======================================================== */
-    function switchMainTab(tabId) {
-      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
-      document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
-
-      document.getElementById(tabId).classList.add('active');
-      event.currentTarget.classList.add('active');
+    function updateInboxBadge() {
+      const msgs = getStoredMessages();
+      document.getElementById('inboxBadge').innerText = msgs.length;
+      document.getElementById('inboxCount').innerText = msgs.length;
     }
-
-    function toggleFolder(header) {
-      const card = header.parentElement;
-      card.classList.toggle('open');
-    }
-
-    function switchHskLevel(btn, level) {
-      const parent = btn.parentElement;
-      parent.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-/* Xử lý chuyển tab đề thi Giản / Phồn và Chủ đề Phồn thể */
-    function switchExamType(btn, typeId) {
-      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (typeId === 'exam-sc') {
-        document.getElementById('exam-sc-block').style.display = 'block';
-        document.getElementById('exam-tc-block').style.display = 'none';
+    function openInboxModal() {
+      const msgs = getStoredMessages();
+      const listEl = document.getElementById('inboxMessagesList');
+      listEl.innerHTML = '';
+      if (msgs.length === 0) {
+        listEl.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">Chưa có tin nhắn nào từ khách hàng.</p>';
       } else {
-        document.getElementById('exam-sc-block').style.display = 'none';
-        document.getElementById('exam-tc-block').style.display = 'block';
+        msgs.forEach((m, idx) => {
+          const item = document.createElement('div');
+          item.style.cssText = "background: #f8fafc; border: 1px solid #e2e8f0; padding: 12px; border-radius: 8px; margin-bottom: 10px;";
+          item.innerHTML = `
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <strong style="color: #0077b6;">👤 ${m.name || 'Khách ẩn danh'}</strong>
+              <small style="color: #94a3b8;">${m.time}</small>
+            </div>
+            <p style="font-size: 13px; color: #1e293b; margin-bottom: 6px;">${m.content}</p>
+            <button onclick="deleteInboxMsg(${idx})" style="background: none; border: none; color: #ef4444; font-size: 11px; cursor: pointer; font-weight: 600;">Xóa tin</button>
+          `;
+          listEl.appendChild(item);
+        });
       }
+      openModal('inboxModal');
+    }
+    function deleteInboxMsg(index) {
+      let msgs = getStoredMessages();
+      msgs.splice(index, 1);
+      localStorage.setItem('hanyu_guest_msgs', JSON.stringify(msgs));
+      updateInboxBadge();
+      openInboxModal();
     }
 
-    function switchTcTopic(btn, topicIndex) {
-      btn.parentElement.querySelectorAll('.btn-level').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    /* 7. CHAT WIDGET & ĐĂNG NHẬP TÊN KHÁCH */
+    function toggleChatWidget() {
+      document.getElementById('chatWidget').classList.toggle('active');
+    }
+    function saveGuestName() {
+      const name = document.getElementById('guestNameInput').value.trim();
+      if (name) localStorage.setItem('hanyu_guest_name', name);
+    }
+    const savedName = localStorage.getItem('hanyu_guest_name');
+    if (savedName) document.getElementById('guestNameInput').value = savedName;
+
+    function sendChatMessage() {
+      const nameInput = document.getElementById('guestNameInput');
+      const textInput = document.getElementById('chatInputField');
+      const name = nameInput.value.trim() || 'Khách ẩn danh';
+      const text = textInput.value.trim();
+
+      if (!text) return;
+
+      const chatBox = document.getElementById('chatMessages');
+      const userMsg = document.createElement('div');
+      userMsg.className = 'msg user';
+      userMsg.innerHTML = `<div class="msg-sender">${name}</div>${text}`;
+      chatBox.appendChild(userMsg);
+      textInput.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      // Lưu tin nhắn vào hòm thư cho quản trị viên
+      const msgs = getStoredMessages();
+      const now = new Date();
+      msgs.unshift({
+        name: name,
+        content: text,
+        time: now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' ' + now.toLocaleDateString()
+      });
+      localStorage.setItem('hanyu_guest_msgs', JSON.stringify(msgs));
+      updateInboxBadge();
+
+      setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'msg bot';
+        botMsg.innerText = `Cảm ơn bạn ${name}! Quản trị viên đã ghi nhận thắc mắc trong hòm thư và sẽ sớm phản hồi.`;
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 700);
     }
 
-    function openNewTcVocabModal() {
-      openNewVocabModal(); // Tận dụng popup thêm từ vựng với font Phồn Thể
-    }
-    /* ========================================================
-       5. THÊM TỪ VỰNG MỚI (LƯU VÀO WEB)
-       ======================================================== */
-    function openNewVocabModal() {
-      document.getElementById('newVocabModal').classList.add('active');
-    }
+    /* 8. THÊM TỪ VỰNG & BÀI TẬP VÀO WEB */
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
-    function closeNewVocabModal() {
-      document.getElementById('newVocabModal').classList.remove('active');
+    function openNewVocabModal(type) {
+      document.getElementById('vocabTypeSystem').value = type;
+      openModal('newVocabModal');
     }
-
     function saveNewVocab() {
+      const type = document.getElementById('vocabTypeSystem').value;
       const hanzi = document.getElementById('inputHanzi').value.trim();
       const pinyin = document.getElementById('inputPinyin').value.trim();
+      const level = document.getElementById('inputLevelTag').value.trim() || 'Mới';
+      const wType = document.getElementById('inputTypeTag').value.trim() || 'Từ vựng';
       const meaning = document.getElementById('inputMeaning').value.trim();
       const example = document.getElementById('inputExample').value.trim();
 
       if (!hanzi || !meaning) {
-        alert('Vui lòng điền tối thiểu chữ Hán và nghĩa tiếng Việt!');
+        alert('Vui lòng điền chữ Hán và nghĩa tiếng Việt!');
         return;
       }
 
       const card = document.createElement('div');
       card.className = 'vocab-card';
       card.innerHTML = `
-        <div class="hanzi-main zh-sc">${hanzi} <span class="pinyin-sub">${pinyin}</span></div>
-        <span class="tag-type">Mới thêm</span>
+        <div class="hanzi-main ${type === 'tc' ? 'zh-tc' : 'zh-sc'}">${hanzi} <span class="pinyin-sub">${pinyin}</span></div>
+        <span class="tag-type">${wType} • ${level}</span>
         <div class="meaning-vn">${meaning}</div>
         <div class="example-box">
-          <p class="zh-sc">${example || 'Đang cập nhật ví dụ...'}</p>
+          <p class="${type === 'tc' ? 'zh-tc' : 'zh-sc'}">${example || 'Đang cập nhật ví dụ...'}</p>
         </div>
       `;
 
-      document.getElementById('vocabDisplayContainer').prepend(card);
-      closeNewVocabModal();
-      document.getElementById('inputHanzi').value = '';
-      document.getElementById('inputPinyin').value = '';
-      document.getElementById('inputMeaning').value = '';
-      document.getElementById('inputExample').value = '';
-      alert('Đã thêm từ vựng mới thành công!');
+      const container = type === 'tc' ? document.getElementById('vocabDisplayContainerTc') : document.getElementById('vocabDisplayContainerSc');
+      container.prepend(card);
+      closeModal('newVocabModal');
+      alert('Đã thêm từ vựng thành công!');
     }
 
-    /* ========================================================
-       6. KHUNG TÌM KIẾM TỨC THÌ (TỰ MỞ THƯ MỤC CHỨA TỪ KHÓA)
-       ======================================================== */
+    function openNewQuizModal() { openModal('newQuizModal'); }
+    function saveNewQuiz() {
+      const q = document.getElementById('quizQuestion').value.trim();
+      const audio = document.getElementById('quizAudio').value.trim();
+      const a = document.getElementById('optA').value.trim() || 'A';
+      const b = document.getElementById('optB').value.trim() || 'B';
+      const c = document.getElementById('optC').value.trim() || 'C';
+      const d = document.getElementById('optD').value.trim() || 'D';
+      const correct = document.getElementById('quizCorrect').value;
+      const target = document.getElementById('quizTargetSection').value;
+      const explain = document.getElementById('quizExplainText').value.trim() || 'Đáp án đúng.';
+
+      if (!q) { alert('Vui lòng nhập câu hỏi!'); return; }
+
+      const card = document.createElement('div');
+      card.className = 'quiz-card';
+      card.innerHTML = `
+        <span class="tag-type">${target === 'sc' ? 'Bài tập Giản Thể' : 'Bài tập Phồn Thể'} • Vừa thêm</span>
+        <p style="font-size: 16px; font-weight: 600; margin-top: 6px;">${q}</p>
+        ${audio ? `<audio controls class="quiz-audio-player" src="${audio}"></audio>` : ''}
+        <div class="quiz-options">
+          <button class="opt-btn" onclick="checkAnswer(this, ${correct === 'A'}, '${explain}')">A. ${a}</button>
+          <button class="opt-btn" onclick="checkAnswer(this, ${correct === 'B'}, '${explain}')">B. ${b}</button>
+          <button class="opt-btn" onclick="checkAnswer(this, ${correct === 'C'}, '${explain}')">C. ${c}</button>
+          <button class="opt-btn" onclick="checkAnswer(this, ${correct === 'D'}, '${explain}')">D. ${d}</button>
+        </div>
+        <div class="quiz-explain"></div>
+      `;
+
+      const targetBox = target === 'sc' ? document.getElementById('exerciseListContainerSc') : document.getElementById('exerciseListContainerTc');
+      targetBox.prepend(card);
+      closeModal('newQuizModal');
+      alert('Đã thêm câu hỏi trắc nghiệm thành công!');
+    }
+
+    /* 9. TÌM KIẾM TỨC THÌ THÔNG MINH */
     document.getElementById('quickSearchInput').addEventListener('input', function(e) {
       const q = e.target.value.toLowerCase().trim();
-      const items = document.querySelectorAll('.vocab-card, .topic-card, .folder-body > div');
-
+      const items = document.querySelectorAll('.vocab-card, .quiz-card');
       if (q === '') {
-        // Khi xóa rỗng ô tìm kiếm: Hiện lại bình thường
         items.forEach(el => el.style.display = '');
         return;
       }
-
       items.forEach(el => {
-        const text = el.innerText.toLowerCase();
-        if (text.includes(q)) {
+        if (el.innerText.toLowerCase().includes(q)) {
           el.style.display = '';
-          // Tự động mở bung thư mục cha chứa từ này ra để người dùng thấy ngay
           const parentFolder = el.closest('.folder-card');
-          if (parentFolder) {
-            parentFolder.classList.add('open');
-          }
+          if (parentFolder) parentFolder.classList.add('open');
         } else {
           el.style.display = 'none';
         }
       });
     });
-
-    /* ========================================================
-       7. KHUNG CHAT HỖ TRỢ
-       ======================================================== */
-    function toggleChatWidget() {
-      document.getElementById('chatWidget').classList.toggle('active');
-    }
-
-    function sendChatMessage() {
-      const input = document.getElementById('chatInputField');
-      const text = input.value.trim();
-      if (!text) return;
-
-      const chatBox = document.getElementById('chatMessages');
-
-      const userMsg = document.createElement('div');
-      userMsg.className = 'msg user';
-      userMsg.innerText = text;
-      chatBox.appendChild(userMsg);
-
-      input.value = '';
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-      setTimeout(() => {
-        const botMsg = document.createElement('div');
-        botMsg.className = 'msg bot';
-        botMsg.innerText = 'Cảm ơn bạn đã nhắn tin! Quản trị viên đã ghi nhận thắc mắc và sẽ giải đáp sớm.';
-        chatBox.appendChild(botMsg);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }, 700);
-    }
   </script>
 </body>
 </html>
